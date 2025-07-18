@@ -108,7 +108,7 @@ h2 {
 .icon-image {
     width: 49px;
     height: 26px;
-    background-image: url("/museum/assets/svg/white-logo.svg");
+    background-image: url("../assets/svg/white-logo.svg");
 }
 
 .icon-text {
@@ -151,7 +151,7 @@ h2 {
     letter-spacing: 2px;
     color: var(--text-white);
     text-decoration: none;
-    transition: color 0.5s;
+    transition: color 1s;
 }
 
 .navigation-link:hover {
@@ -184,41 +184,41 @@ h2 {
 }
 
 .youtube {
-    background-image: url("/museum/assets/svg/social/Youtube.svg");
+    background-image: url("../assets/svg/social/Youtube.svg");
 }
 
 .youtube:hover {
-    background-image: url("/museum/assets/svg/social/hover/Youtube.svg");
+    background-image: url("../assets/svg/social/hover/Youtube.svg");
 }
 
 .instagram {
-    background-image: url("/museum/assets/svg/social/Instagram.svg");
+    background-image: url("../assets/svg/social/Instagram.svg");
 }
 
 .instagram:hover {
-    background-image: url("/museum/assets/svg/social/hover/Instagram.svg");
+    background-image: url("../assets/svg/social/hover/Instagram.svg");
 }
 
 .facebook {
-    background-image: url("/museum/assets/svg/social/Facebook.svg");
+    background-image: url("../assets/svg/social/Facebook.svg");
 }
 
 .facebook:hover {
-    background-image: url("/museum/assets/svg/social/hover/Facebook.svg");
+    background-image: url("../assets/svg/social/hover/Facebook.svg");
 }
 
 .twitter {
-    background-image: url("/museum/assets/svg/social/Twitter.svg");
+    background-image: url("../assets/svg/social/Twitter.svg");
 }
 
 .twitter:hover {
-    background-image: url("/museum/assets/svg/social/hover/Twitter.svg");
+    background-image: url("../assets/svg/social/hover/Twitter.svg");
 }
 
 .pinterest {
-    background-image: url("/museum/assets/svg/social/Pinterest.svg");
+    background-image: url("../assets/svg/social/Pinterest.svg");
 }
 
 .pinterest:hover {
-    background-image: url("/museum/assets/svg/social/hover/Pinterest.svg");
+    background-image: url("../assets/svg/social/hover/Pinterest.svg");
 }
