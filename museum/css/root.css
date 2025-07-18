@@ -18,6 +18,10 @@ body {
     margin: 0 auto;
 }
 
+.with-top-distance {
+    padding-top: 75px;
+}
+
 .flex-centered {
     display: flex;
     justify-content: space-between;

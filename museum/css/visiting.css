@@ -1,0 +1,60 @@
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 75px 60px;
+    margin-top: 100px;
+    padding-bottom: 75px;
+}
+
+.image_card {
+    width: 440px;
+    height: 285px;
+}
+
+.image-card-title {
+    font-family: Forum, sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.image-card-first-line {
+    font-family: Roboto, sans-serif;
+    font-weight: 200;
+    font-size: 22px;
+    margin: 25px 0 0;
+}
+
+.image-cars-second-line {
+    font-family: Roboto, sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+    margin: 10px 0 0;
+}
+
+.underline-card {
+    position: relative;
+    margin-top: 25px;
+}
+
+.underline-card::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 300px;
+    height: 2px;
+    background-color: var(--dark-red);
+    transition: width 1s;
+}
+
+.underline-card:hover::after {
+    width: 100%;
+}
+
+.card-link {
+    text-decoration: none;
+    color: var(--text-dark);
+}
