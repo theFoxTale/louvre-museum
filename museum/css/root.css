@@ -1,0 +1,224 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    background-color: var(--background-black);
+}
+
+.content-container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 150px;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    height: 392px;
+    background-color: var(--background-black);
+}
+
+.footer-up {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left-part {
+    display: flex;
+    align-items: start;
+    gap: 145px;
+    margin-top: 75px;
+}
+
+.bottom-flex {
+    align-self: flex-end;
+}
+
+.footer-underline {
+    height: 3px;
+    background-color: var(--footer-grey);
+}
+
+.footer-down {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-down-text {
+    font-family: Roboto, sans-serif;
+    font-weight: 200;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--text-white);
+    margin: 50px 0;
+}
+
+/* Sections */
+h2 {
+    text-transform: uppercase;
+    font-family: Forum, sans-serif;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 90px;
+    letter-spacing: 5px;
+
+}
+
+.dark-section {
+    background-color: var(--background-black);
+}
+
+.dark-section h2{
+    color: var(--text-white);
+}
+
+.light-section {
+    background-color: var(--background-white);
+}
+
+.light-section h2 {
+    color: var(--hover-gold);
+}
+
+/* Icon */
+.icon-block {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.icon-image {
+    width: 49px;
+    height: 26px;
+    background-image: url("/museum/assets/svg/white-logo.svg");
+}
+
+.icon-text {
+    font-family: Forum, sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--text-white);
+    padding-top: 3px;
+    margin: 0;
+}
+
+/* Navigation */
+.header-navigation-list {
+    list-style: none;
+    display: flex;
+    gap: 55px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.footer-navigation-list {
+    list-style: none;
+    column-count: 2;
+    column-gap: 150px;
+    margin: 0 0 50px;
+    padding: 0;
+}
+
+.column-with-gap {
+    margin-bottom: 25px;
+}
+
+.navigation-link {
+    font-family: Roboto, sans-serif;
+    font-weight: 200;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--text-white);
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.navigation-link:hover {
+    color: var(--hover-gold);
+}
+
+.social-list {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    justify-content: right;
+    align-items: center;
+    padding: 0;
+    margin: 0 0 55px;
+}
+
+.social-icon {
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--footer-grey);
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: border-color 1s linear,
+                background-image 1s linear;
+}
+
+.social-icon:hover {
+    border-color: var(--hover-gold);
+}
+
+.youtube {
+    background-image: url("/museum/assets/svg/social/Youtube.svg");
+}
+
+.youtube:hover {
+    background-image: url("/museum/assets/svg/social/hover/Youtube.svg");
+}
+
+.instagram {
+    background-image: url("/museum/assets/svg/social/Instagram.svg");
+}
+
+.instagram:hover {
+    background-image: url("/museum/assets/svg/social/hover/Instagram.svg");
+}
+
+.facebook {
+    background-image: url("/museum/assets/svg/social/Facebook.svg");
+}
+
+.facebook:hover {
+    background-image: url("/museum/assets/svg/social/hover/Facebook.svg");
+}
+
+.twitter {
+    background-image: url("/museum/assets/svg/social/Twitter.svg");
+}
+
+.twitter:hover {
+    background-image: url("/museum/assets/svg/social/hover/Twitter.svg");
+}
+
+.pinterest {
+    background-image: url("/museum/assets/svg/social/Pinterest.svg");
+}
+
+.pinterest:hover {
+    background-image: url("/museum/assets/svg/social/hover/Pinterest.svg");
+}

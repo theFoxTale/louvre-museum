@@ -1,0 +1,17 @@
+:root {
+    --background-black: #030303;
+    --background-white: #FFFFFF;
+
+    --hover-gold: #9d8665;
+    --active-gold: #7E6C51;
+    --dark-red: #710707;
+    --dark-grey: #999999;
+
+    --video-standart: #B3B3B3;
+    --video-hover: #989898;
+
+    --text-white: #FFFFFF;
+    --text-dark: #000000;
+
+    --footer-grey: #666666;
+}
