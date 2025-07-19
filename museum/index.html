@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/colors.css">
     <link rel="stylesheet" href="css/welcome.css">
     <link rel="stylesheet" href="css/visiting.css">
+    <link rel="stylesheet" href="css/tickets.css">
     <link rel="stylesheet" href="css/contacts.css">
 
     <title>Louvre Museum</title>
@@ -140,6 +141,52 @@
         <section id="tickets-section" class="section light-section">
             <div class="content-container">
                 <h2 class="underline-title with-top-distance">BUY TICKETS</h2>
+                <div class="ticket-section">
+                    <div class="ticket-left-side">
+                        <img alt="tickets image" src="assets/img/tickets.png" class="tickets-image">
+                        <div class="ticket-type-section">
+                            <p class="ticket-block-header type-header">Ticket Type</p>
+                            <label class="radio-button-text">
+                                <input type="radio" checked="checked" name="ticket-type">
+                                <span class="checkmark"></span>
+                                Permanent exhibition
+                            </label>
+                            <label class="radio-button-text">
+                                <input type="radio" checked="checked" name="ticket-type">
+                                <span class="checkmark"></span>
+                                Temporary exhibition
+                            </label>
+                            <label class="radio-button-text">
+                                <input type="radio" checked="checked" name="ticket-type">
+                                <span class="checkmark"></span>
+                                Combined Admission
+                            </label>
+                        </div>
+                    </div>
+                    <div class="ticket-count-section">
+                        <p class="ticket-block-header amount-header">Amount</p>
+
+                        <p class="number-text number-text-bottom">Basic 18+</p>
+                        <div class="amount-block flex-centered">
+                            <button type="button" class="amount-button" onclick="this.nextElementSibling.stepDown()">–</button>
+                            <input type="number" min="0" max="20" value="1" readonly class="number-input number-text">
+                            <button type="button" class="amount-button"  onclick="this.previousElementSibling.stepUp()">+</button>
+                        </div>
+
+                        <p class="number-text number-text-bottom">Senior 65+</p>
+                        <div class="amount-block flex-centered">
+                            <button type="button" class="amount-button" onclick="this.nextElementSibling.stepDown()">–</button>
+                            <input type="number" min="0" max="20" value="1" readonly class="number-input number-text">
+                            <button type="button" class="amount-button"  onclick="this.previousElementSibling.stepUp()">+</button>
+                        </div>
+
+                        <p class="total-text">Total €220</p>
+                        <button type="button" class="buy-button">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="parallax-image-container">
+                <img alt="parallax image" src="assets/img/parallax.jpg" class="parallax-image">
             </div>
         </section>
 

@@ -1,0 +1,170 @@
+.ticket-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 103px 0 75px;
+}
+
+.ticket-left-side {
+    display: flex;
+    gap: 60px;
+}
+
+.tickets-image {
+    width: 720px;
+    height: 550px;
+}
+
+.ticket-type-section {
+    width: 270px;
+}
+
+.ticket-count-section {
+    width: 175px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.ticket-block-header {
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.type-header {
+    margin: 0 0 50px;
+}
+
+.amount-header {
+    margin: 0 0 25px;
+}
+
+.radio-button-text {
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    padding-left: 40px;
+    user-select: none;
+    margin-bottom: 25px;
+}
+
+.radio-button-text input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    height: 17px;
+    width: 17px;
+    background-color: var(--background-white);
+    border: 2px solid var(--background-black);
+    border-radius: 50%;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.radio-button-text input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.radio-button-text .checkmark:after {
+    top: 3px;
+    left: 3px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--background-black);
+}
+
+.amount-block {
+    width: 150px;
+    height: 50px;
+    border: 3px solid var(--background-black);
+}
+
+.amount-button {
+    width: 38px;
+    height: 38px;
+    background-color: var(--background-white);
+    border: 0;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    text-align: center;
+    transition: color 1s linear;
+}
+
+.amount-button:hover {
+    color: var(--hover-gold);
+}
+
+.number-input {
+    all: unset;
+    text-align: center;
+    appearance: none;
+    -moz-appearance: textfield;
+}
+
+.number-text {
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+}
+
+.number-text-bottom {
+    margin: 10px 0 15px;
+}
+
+.total-text {
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: 1.65px;
+    margin: 50px 0 60px;
+}
+
+.buy-button {
+    width: 175px;
+    height: 50px;
+    background-color: var(--background-black);
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-align: center;
+    vertical-align: middle;
+    color: var(--text-white);
+    transition: border-color 1s linear,
+                background-image 1s linear;
+}
+
+.buy-button:hover {
+    background-color: var(--hover-gold);
+    color: var(--text-dark)
+}
+
+.parallax-image-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.parallax-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    top: -480px;
+}
