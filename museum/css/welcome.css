@@ -1,0 +1,140 @@
+.relative-section {
+    position: relative;
+    height: 810px;
+}
+
+.welcome-text {
+    position: absolute;
+    top: 150px;
+}
+
+.welcome-image-container {
+    width: 100%;
+    height: 750px;
+    margin: 0;
+    background-image: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%), url("../assets/img/welcome/1.jpg");
+    background-position: calc(100%) calc(100% - 10px);
+    background-size: 1000px 750px;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    font-size: 28px;
+    letter-spacing: 2px;
+    color: var(--text-white);
+    margin: 25px 0 0;
+}
+
+.welcome-gallery {
+    width: 1000px;
+    height: 750px;
+    position: relative;
+    background-image: url("../assets/img/welcome/1.jpg");
+}
+
+.welcome-gallery-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%);
+}
+
+.discover-button {
+    width: 360px;
+    height: 75px;
+    border: 0;
+    border-radius: 10px;
+    background-color: var(--dark-red);
+    margin-top: 75px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: border-color 1s;
+}
+
+.discover-button:hover {
+    background-color: var(--hover-gold);
+}
+
+.discover-button-link {
+    text-decoration: none;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 100%;
+    letter-spacing: 2px;
+    color: var(--text-white);
+}
+
+.welcome-slider {
+    width: 600px;
+    height: 120px;
+    background-color: var(--background-black);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.welcome-pages-container {
+    gap: 10px;
+}
+
+.welcome-pages-container p {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    vertical-align: middle;
+    color: var(--text-white);
+}
+
+.welcome-buttons-container {
+    gap: 25px;
+}
+
+.welcome-button {
+    width: 16px;
+    height: 16px;
+    background-color: var(--background-white);
+}
+
+.selected {
+    background-color: var(--hover-gold) !important;
+}
+
+.welcome-arrows {
+    gap: 20px;
+}
+
+.arrow-container {
+    width: 30px;
+    height: 8px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-image 1s linear;
+}
+
+.arrow-left {
+    background-image: url("../assets/svg/welcome/arrow-left.svg");
+}
+
+.arrow-left:hover {
+    background-image: url("../assets/svg/welcome/arrow-left-hover.svg");
+}
+
+.arrow-right {
+    background-image: url("../assets/svg/welcome/arrow-right.svg");
+}
+
+.arrow-right:hover {
+    background-image: url("../assets/svg/welcome/arrow-right-hover.svg");
+}

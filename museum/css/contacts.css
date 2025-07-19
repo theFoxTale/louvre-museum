@@ -1,0 +1,34 @@
+.map-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 103px 0 74px;
+}
+
+.map-container {
+    width: 960px;
+    height: 620px;
+}
+
+.map-header {
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 28px;
+    margin: 0;
+}
+
+.text-with-margin {
+    margin-bottom: 50px;
+}
+
+.map-description {
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    margin: 25px 0 0;
+}
+
+.map-hidden-link {
+    text-decoration: none;
+    color: var(--text-dark);
+    display: block;
+}
