@@ -14,8 +14,11 @@
     <link rel="stylesheet" href="css/contacts.css">
     <link rel="stylesheet" href="css/gallery.css">
     <link rel="stylesheet" href="css/explore.css">
+    <link rel="stylesheet" href="css/video.css">
 
     <title>Louvre Museum</title>
+
+    <script src="index.js"></script>
 </head>
 
 <body class="main-page">
@@ -145,7 +148,60 @@
 
         <section id="video-section" class="section light-section">
             <div class="content-container">
-                <h2 class="with-top-distance">Video journey</h2>
+                <div class="flex-centered video-header-container">
+                    <h2 class="video-left-header">Video journey</h2>
+                    <p class="video-right-header">Enter and visit one of the most famous museums in the world and enjoy masterpieces such as Mona Lisa or Hammurabi's Code</p>
+                </div>
+
+                <div class="player-container">
+                    <div class="big-play-button"></div>
+                </div>
+                <div class="player-actions-container">
+                    <img alt="play button" src="assets/svg/video/play.svg" class="play-button">
+                    <input type="range" value="40" min="0" max="100" step="1" class="slider play-slider">
+                    <img alt="volume button" src="assets/svg/video/volume.svg" class="volume-button">
+                    <input type="range" value="40" min="0" max="100" step="1" class="slider volume-slider">
+                    <img alt="volume button" src="assets/svg/video/expand.svg" class="expand-button">
+                </div>
+
+                <div class="mini-video-container">
+                    <iframe class="mini-video"
+                            src="https://www.youtube-nocookie.com/embed/aWmJ5DgyWPI?si=d_nSbuQ63l5IZkt3"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen>
+                    </iframe>
+
+                    <iframe class="mini-video"
+                            src="https://www.youtube-nocookie.com/embed/Vi5D6FKhRmo?si=K8U_lqEDcSzF5Q2g"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen>
+                    </iframe>
+
+                    <iframe class="mini-video"
+                            src="https://www.youtube-nocookie.com/embed/NOhDysLnTvY?si=vy1CzDK3Zrq4szz2"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="flex-centered mini-video-controls">
+                    <div class="video-arrow video-before"></div>
+                    <div class="video-dot video-unvisited"></div>
+                    <div class="video-dot"></div>
+                    <div class="video-dot"></div>
+                    <div class="video-dot"></div>
+                    <div class="video-dot"></div>
+                    <div class="video-arrow video-after"></div>
+                </div>
             </div>
         </section>
 
