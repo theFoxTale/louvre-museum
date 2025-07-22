@@ -51,12 +51,9 @@ h1 {
     background-color: var(--dark-red);
     margin-top: 75px;
 
-    font-family: Roboto, sans-serif;
-    font-weight: 300;
-    font-size: 22px;
-    letter-spacing: 2px;
-    text-align: center;
-    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     transition: background-color 1s;
 }
