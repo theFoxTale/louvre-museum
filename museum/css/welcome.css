@@ -51,11 +51,14 @@ h1 {
     background-color: var(--dark-red);
     margin-top: 75px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-align: center;
+    vertical-align: middle;
 
-    transition: border-color 1s;
+    transition: background-color 1s;
 }
 
 .discover-button:hover {
