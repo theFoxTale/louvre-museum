@@ -96,7 +96,7 @@ h2 {
     background-color: var(--background-black);
 }
 
-.dark-section h2{
+.dark-section h2 {
     color: var(--text-white);
 }
 
@@ -200,8 +200,8 @@ h2 {
     border-radius: 50%;
     background-repeat: no-repeat;
     background-position: center;
-    transition: border-color 1s linear,
-                background-image 1s linear;
+    transition: border-color 1s,
+                background-image 1s;
 }
 
 .social-icon:hover {
@@ -246,4 +246,47 @@ h2 {
 
 .pinterest:hover {
     background-image: url("../assets/svg/social/hover/Pinterest.svg");
+}
+
+@media (max-width: 1024px) {
+    .content-container {
+        max-width: 1024px;
+    }
+
+    h2 {
+        font-size: 50px;
+        line-height: 75px;
+    }
+
+    .underline-title::after {
+        bottom: -20px;
+    }
+}
+@media (max-width: 768px) {
+    .content-container {
+        max-width: 768px;
+    }
+
+    h2 {
+        font-size: 40px;
+        line-height: 60px;
+    }
+
+    .underline-title::after {
+        bottom: -20px;
+    }
+}
+@media (max-width: 420px) {
+    .content-container {
+        max-width: 420px;
+    }
+
+    h2 {
+        font-size: 28px;
+        line-height: 40px;
+    }
+
+    .underline-title::after {
+        bottom: -20px;
+    }
 }
