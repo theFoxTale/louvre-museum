@@ -200,8 +200,8 @@ h2 {
     border-radius: 50%;
     background-repeat: no-repeat;
     background-position: center;
-    transition: border-color 1s linear,
-                background-image 1s linear;
+    transition: border-color 1s,
+                background-image 1s;
 }
 
 .social-icon:hover {

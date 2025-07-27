@@ -120,7 +120,7 @@ h1 {
     height: 8px;
     background-repeat: no-repeat;
     background-position: center;
-    transition: background-image 1s linear;
+    transition: background-image 1s;
 }
 
 .arrow-left {
