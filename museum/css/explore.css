@@ -54,6 +54,7 @@
     z-index: 10;
 }
 
+.medium-explore-text {}
 .last-explore-text {}
 
 @media (max-width: 1024px) {
@@ -63,12 +64,22 @@
         margin: 60px auto;
     }
 
-    .last-explore-text {
-        display: none;
-    }
-
     .explore-picture-container {
         align-self: center;
+    }
+
+    .explore-text {
+        font-size: 20px;
+        line-height: 38.5px;
+        margin: 0;
+    }
+
+    .medium-explore-text {
+        line-height: 35px !important;
+    }
+
+    .last-explore-text {
+        display: none;
     }
 }
 
