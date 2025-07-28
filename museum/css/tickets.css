@@ -12,6 +12,7 @@
 .tickets-image {
     width: 720px;
     height: 550px;
+    object-fit: cover;
 }
 
 .ticket-type-section {
@@ -138,6 +139,7 @@
 .buy-button {
     width: 175px;
     height: 50px;
+    border: 0;
     background-color: var(--background-black);
     font-family: Roboto, sans-serif;
     font-weight: 300;
