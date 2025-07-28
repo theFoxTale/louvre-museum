@@ -81,7 +81,6 @@ h1 {
     position: absolute;
     right: 0;
     bottom: 0;
-
     display: flex;
     justify-content: center;
     gap: 60px;
@@ -169,7 +168,46 @@ h1 {
 }
 
 @media (max-width: 768px) {
+    .relative-section {
+        height: auto;
+    }
 
+    .discover-button-link {
+        display: none;
+    }
+
+    .welcome-text {
+        text-align: center;
+        position: static;
+        margin-bottom: 50px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .welcome-image-container {
+        height: 546px;
+        background-image: url("../assets/img/welcome/1.jpg");
+        background-size: contain;
+        background-position: center;
+    }
+
+    .welcome-slider {
+        position: static;
+        width: 100%;
+        height: 110px;
+        gap: 45px;
+    }
+
+    .welcome-pages-container p {
+        font-size: 20px;
+    }
+
+    .welcome-button {
+        width: 12px;
+        height: 12px;
+    }
 }
 
 @media (max-width: 420px) {
