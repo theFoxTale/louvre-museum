@@ -121,6 +121,7 @@ h1 {
     height: 8px;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: contain;
     transition: background-image 1s;
     cursor: pointer;
 }
@@ -211,7 +212,48 @@ h1 {
 }
 
 @media (max-width: 420px) {
+    h1 {
+        font-size: 16px;
+    }
 
+    .welcome-image-container {
+        height: 285px;
+        background-image: url("../assets/img/welcome/1.jpg");
+        background-size: contain;
+        background-position: center;
+    }
+
+    .welcome-slider {
+        position: static;
+        width: 100%;
+        height: 80px;
+        gap: 25px;
+    }
+
+    .welcome-pages-container {
+        gap: 5px;
+    }
+
+    .welcome-pages-container p {
+        font-size: 16px;
+    }
+
+    .welcome-buttons-container {
+        gap: 10px;
+    }
+
+    .welcome-button {
+        width: 7px;
+        height: 7px;
+    }
+
+    .welcome-arrows {
+        gap: 15px;
+    }
+
+    .arrow-container {
+        width: 20px;
+    }
 }
 
 
