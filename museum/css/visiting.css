@@ -51,10 +51,53 @@
 }
 
 .underline-card:hover::after {
-    width: 100%;
+    width: 100% !important;
 }
 
 .card-link {
     text-decoration: none;
     color: var(--text-dark);
+}
+
+@media (max-width: 1024px) {
+    .image_card {
+        width: 330px;
+        height: 215px;
+    }
+
+    .cards-container {
+        gap: 60px 0;
+        margin-top: 83px;
+        padding-bottom: 60px;
+    }
+
+    .card-link {
+        margin-left: 108px;
+    }
+
+    .image-card-title {
+        font-size: 28px;
+        letter-spacing: 3px;
+    }
+
+    .image-card-first-line {
+        font-size: 20px;
+        margin: 22px 0 0;
+    }
+
+    .image-cars-second-line {
+        font-size: 16px;
+    }
+
+    .underline-card::after {
+        width: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 420px) {
+
 }
