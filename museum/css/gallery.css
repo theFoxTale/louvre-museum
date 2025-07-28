@@ -36,3 +36,41 @@
     bottom: 0;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
 }
+
+.gallery-1920 {
+    display: grid;
+}
+
+.gallery-1240 {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .gallery-container {
+        height: 1460px;
+    }
+
+    .gallery-columns {
+        margin-top: 60px;
+    }
+
+    .gallery-1920 {
+        display: none;
+    }
+
+    .gallery-1240 {
+        display: grid;
+    }
+
+    .gallery-gradient {
+        height: 240px;
+    }
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 420px) {
+
+}
