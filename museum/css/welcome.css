@@ -6,6 +6,7 @@
 .welcome-text {
     position: absolute;
     top: 150px;
+    transition: opacity 1s;
 }
 
 .welcome-image-container {
