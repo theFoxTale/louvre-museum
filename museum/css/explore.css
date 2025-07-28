@@ -53,3 +53,29 @@
     bottom: 0;
     z-index: 10;
 }
+
+.last-explore-text {}
+
+@media (max-width: 1024px) {
+    .explore-container {
+        height: auto;
+        flex-direction: column;
+        margin: 60px auto;
+    }
+
+    .last-explore-text {
+        display: none;
+    }
+
+    .explore-picture-container {
+        align-self: center;
+    }
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 420px) {
+
+}
