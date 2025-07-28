@@ -21,7 +21,7 @@
     <script src="index.js"></script>
 </head>
 
-<body class="main-page">
+<body>
     <header>
         <div class="content-container header-container">
             <div class="icon-block">
@@ -29,16 +29,47 @@
                 <p class="icon-text">LOUVRE</p>
             </div>
 
-            <nav>
+            <nav class="header-navigation">
                 <ul class="header-navigation-list">
-                    <li><a href="#visiting-section" class="navigation-link">Visiting</a></li>
-                    <li><a href="#explore-section" class="navigation-link">Explore</a></li>
-                    <li><a href="#video-section" class="navigation-link">Video</a></li>
-                    <li><a href="#gallery-section" class="navigation-link">Gallery</a></li>
-                    <li><a href="#tickets-section" class="navigation-link">Tickets</a></li>
-                    <li><a href="#contacts-section" class="navigation-link">Contacts</a></li>
+                    <li>
+                        <a href="#visiting-section" class="navigation-link">
+                            Visiting
+                            <div class="menu-arrow"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#explore-section" class="navigation-link">
+                            Explore
+                            <div class="menu-arrow"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#video-section" class="navigation-link">
+                            Video
+                            <div class="menu-arrow"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#gallery-section" class="navigation-link">
+                            Gallery
+                            <div class="menu-arrow"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tickets-section" class="navigation-link">
+                            Tickets
+                            <div class="menu-arrow"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contacts-section" class="navigation-link">
+                            Contacts
+                            <div class="menu-arrow"></div>
+                        </a>
+                    </li>
                 </ul>
             </nav>
+            <div class="menu-icon" onclick="toggleAdaptiveMenu();"></div>
         </div>
     </header>
 
