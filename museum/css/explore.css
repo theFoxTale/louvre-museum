@@ -100,5 +100,18 @@
 }
 
 @media (max-width: 420px) {
+    .explore-picture-container {
+        width: 380px;
+        height: 368px;
+        flex-basis: 380px;
+    }
 
+    .picture-before {
+        width: 230px;
+    }
+
+    .picture-slider {
+        left: 220px;
+        height: 368px;
+    }
 }
