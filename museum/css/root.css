@@ -287,6 +287,14 @@ h2 {
         height: 130px;
     }
 
+    .menu-icon {
+        display: block;
+    }
+
+    .header-navigation {
+        display: none;
+    }
+
     h2 {
         font-size: 50px;
         line-height: 75px;
@@ -307,6 +315,14 @@ h2 {
         line-height: 60px;
     }
 
+    .menu-icon {
+        display: block;
+    }
+
+    .header-navigation {
+        display: none;
+    }
+
     .underline-title::after {
         bottom: -20px;
     }
@@ -320,6 +336,14 @@ h2 {
     h2 {
         font-size: 28px;
         line-height: 40px;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .header-navigation {
+        display: none;
     }
 
     .underline-title::after {
