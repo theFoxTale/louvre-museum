@@ -342,12 +342,16 @@ h2 {
     }
 
     h2 {
-        font-size: 50px;
-        line-height: 75px;
+        font-size: 50px !important;
+        line-height: 75px !important;
     }
 
     .underline-title::after {
-        bottom: -20px;
+        bottom: -20px !important;
+    }
+
+    .with-top-distance {
+        padding-top: 60px !important;
     }
 }
 
