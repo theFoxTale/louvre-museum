@@ -162,8 +162,8 @@
                     <h2 class="underline-title with-bottom-distance">Picture explore</h2>
 
                     <p class="explore-text with-top-distance">Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the Spanish Golden Age.</p>
-                    <p class="explore-text">It was cleaned in 1984 to remove a <span class="explore-gold-text">"yellow veil"</span> of dust that had gathered since the previous restoration in the 19th century.</p>
-                    <p class="explore-text">The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different.</p>
+                    <p class="explore-text medium-explore-text">It was cleaned in 1984 to remove a <span class="explore-gold-text">"yellow veil"</span> of dust that had gathered since the previous restoration in the 19th century.</p>
+                    <p class="explore-text last-explore-text">The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different.</p>
                 </div>
                 <div class="explore-picture-container">
                     <div class="picture-before">
@@ -189,9 +189,13 @@
                 </div>
                 <div class="player-actions-container">
                     <button type="button" class="play-button"></button>
-                    <input type="range" value="40" min="0" max="100" step="1" class="slider play-slider">
+                    <label>
+                        <input type="range" value="40" min="0" max="100" step="1" class="slider play-slider">
+                    </label>
                     <button type="button" class="volume-button"></button>
-                    <input type="range" value="40" min="0" max="100" step="1" class="slider volume-slider">
+                    <label>
+                        <input type="range" value="40" min="0" max="100" step="1" class="slider volume-slider">
+                    </label>
                     <button type="button" class="expand-button"></button>
                 </div>
 
@@ -237,7 +241,7 @@
             <div class="content-container gallery-container">
                 <h2 class="with-top-distance">Art Gallery</h2>
 
-                <div class="gallery-columns">
+                <div class="gallery-columns gallery-1920">
                     <div class="gallery-rows row-with-gap">
                         <img alt="Gallery Picture #2" src="assets/img/gallery/gallery2.jpg">
                         <img alt="Gallery Picture #9" src="assets/img/gallery/gallery9.jpg">
@@ -255,6 +259,27 @@
                         <img alt="Gallery Picture #10" src="assets/img/gallery/gallery10.jpg">
                         <img alt="Gallery Picture #15" src="assets/img/gallery/gallery15.jpg">
                         <img alt="Gallery Picture #12" src="assets/img/gallery/gallery12.jpg">
+                    </div>
+                </div>
+
+                <div class="gallery-columns gallery-1240">
+                    <div class="gallery-rows row-with-gap">
+                        <img alt="Gallery Picture #1" src="assets/img/gallery/gallery1.jpg">
+                        <img alt="Gallery Picture #2" src="assets/img/gallery/gallery2.jpg">
+                        <img alt="Gallery Picture #11" src="assets/img/gallery/gallery11.jpg">
+                        <img alt="Gallery Picture #5" src="assets/img/gallery/gallery5.jpg">
+                    </div>
+                    <div class="gallery-rows">
+                        <img alt="Gallery Picture #7" src="assets/img/gallery/gallery7.jpg">
+                        <img alt="Gallery Picture #8" src="assets/img/gallery/gallery8.jpg">
+                        <img alt="Gallery Picture #13" src="assets/img/gallery/gallery13.jpg">
+                        <img alt="Gallery Picture #14" src="assets/img/gallery/gallery14.jpg">
+                    </div>
+                    <div class="gallery-rows row-with-gap">
+                        <img alt="Gallery Picture #12" src="assets/img/gallery/gallery12.jpg">
+                        <img alt="Gallery Picture #3" src="assets/img/gallery/gallery3.jpg">
+                        <img alt="Gallery Picture #4" src="assets/img/gallery/gallery4.jpg">
+                        <img alt="Gallery Picture #6" src="assets/img/gallery/gallery6.jpg">
                     </div>
                 </div>
 
@@ -293,14 +318,18 @@
                         <p class="number-text number-text-bottom">Basic 18+</p>
                         <div class="amount-block flex-centered">
                             <button type="button" class="amount-button" onclick="this.nextElementSibling.stepDown()">–</button>
-                            <input type="number" min="0" max="20" value="1" readonly class="number-input number-text">
+                            <label>
+                                <input type="number" min="0" max="20" value="1" readonly class="number-input number-text">
+                            </label>
                             <button type="button" class="amount-button"  onclick="this.previousElementSibling.stepUp()">+</button>
                         </div>
 
                         <p class="number-text number-text-bottom">Senior 65+</p>
                         <div class="amount-block flex-centered">
                             <button type="button" class="amount-button" onclick="this.nextElementSibling.stepDown()">–</button>
-                            <input type="number" min="0" max="20" value="1" readonly class="number-input number-text">
+                            <label>
+                                <input type="number" min="0" max="20" value="1" readonly class="number-input number-text">
+                            </label>
                             <button type="button" class="amount-button"  onclick="this.previousElementSibling.stepUp()">+</button>
                         </div>
 
@@ -367,7 +396,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="http://twitter.com/museelouvre" title="to X" target="_blank">
+                        <a href="https://x.com/museelouvre" title="to X" target="_blank">
                             <div class="social-icon twitter"></div>
                         </a>
                     </li>

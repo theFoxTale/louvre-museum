@@ -50,6 +50,43 @@
     cursor: e-resize;
     position: absolute;
     left: 380px;
-    bottom: 0;
+    top: 0;
     z-index: 10;
+}
+
+.medium-explore-text {}
+.last-explore-text {}
+
+@media (max-width: 1024px) {
+    .explore-container {
+        height: auto;
+        flex-direction: column;
+        margin: 60px auto;
+    }
+
+    .explore-picture-container {
+        align-self: center;
+    }
+
+    .explore-text {
+        font-size: 20px;
+        line-height: 38.5px;
+        margin: 0;
+    }
+
+    .medium-explore-text {
+        line-height: 35px !important;
+    }
+
+    .last-explore-text {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 420px) {
+
 }
