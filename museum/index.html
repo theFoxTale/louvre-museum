@@ -189,9 +189,13 @@
                 </div>
                 <div class="player-actions-container">
                     <button type="button" class="play-button"></button>
-                    <input type="range" value="40" min="0" max="100" step="1" class="slider play-slider">
+                    <label>
+                        <input type="range" value="40" min="0" max="100" step="1" class="slider play-slider">
+                    </label>
                     <button type="button" class="volume-button"></button>
-                    <input type="range" value="40" min="0" max="100" step="1" class="slider volume-slider">
+                    <label>
+                        <input type="range" value="40" min="0" max="100" step="1" class="slider volume-slider">
+                    </label>
                     <button type="button" class="expand-button"></button>
                 </div>
 
@@ -314,14 +318,18 @@
                         <p class="number-text number-text-bottom">Basic 18+</p>
                         <div class="amount-block flex-centered">
                             <button type="button" class="amount-button" onclick="this.nextElementSibling.stepDown()">–</button>
-                            <input type="number" min="0" max="20" value="1" readonly class="number-input number-text">
+                            <label>
+                                <input type="number" min="0" max="20" value="1" readonly class="number-input number-text">
+                            </label>
                             <button type="button" class="amount-button"  onclick="this.previousElementSibling.stepUp()">+</button>
                         </div>
 
                         <p class="number-text number-text-bottom">Senior 65+</p>
                         <div class="amount-block flex-centered">
                             <button type="button" class="amount-button" onclick="this.nextElementSibling.stepDown()">–</button>
-                            <input type="number" min="0" max="20" value="1" readonly class="number-input number-text">
+                            <label>
+                                <input type="number" min="0" max="20" value="1" readonly class="number-input number-text">
+                            </label>
                             <button type="button" class="amount-button"  onclick="this.previousElementSibling.stepUp()">+</button>
                         </div>
 
@@ -388,7 +396,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="http://twitter.com/museelouvre" title="to X" target="_blank">
+                        <a href="https://x.com/museelouvre" title="to X" target="_blank">
                             <div class="social-icon twitter"></div>
                         </a>
                     </li>
