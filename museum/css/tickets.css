@@ -199,7 +199,31 @@
 }
 
 @media (max-width: 768px) {
+    .ticket-section {
+        padding: 63px 0 40px;
+    }
 
+    .tickets-image {
+        width: 444px;
+        height: 340px;
+    }
+
+    .ticket-count-section {
+        align-items: start;
+        margin-right: 49px;
+    }
+
+    .amount-header {
+        margin: 0 0 14px;
+    }
+
+    .number-text-bottom {
+        margin: 25px 0 10px;
+    }
+
+    .total-text {
+        margin: 40px 0;
+    }
 }
 
 @media (max-width: 420px) {

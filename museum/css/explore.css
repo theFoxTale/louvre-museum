@@ -84,7 +84,19 @@
 }
 
 @media (max-width: 768px) {
+    .explore-container {
+        height: auto;
+        flex-direction: column;
+        margin: 60px auto 40px;
+    }
 
+    .explore-text-container {
+        flex-basis: auto;
+    }
+
+    .explore-text {
+        display: none;
+    }
 }
 
 @media (max-width: 420px) {

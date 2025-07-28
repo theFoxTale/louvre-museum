@@ -58,7 +58,29 @@
 }
 
 @media (max-width: 768px) {
+    .map-section {
+        flex-direction: column;
+        padding: 67px 0 63px;
+    }
 
+    .map-container {
+        width: 728px;
+        height: 476px;
+        margin-top: 40px;
+    }
+
+    .map-header {
+        font-size: 20px;
+    }
+
+    .map-description {
+        font-size: 18px;
+        margin: 15px 0 0;
+    }
+
+    .text-with-margin {
+        margin-bottom: 40px;
+    }
 }
 
 @media (max-width: 420px) {
