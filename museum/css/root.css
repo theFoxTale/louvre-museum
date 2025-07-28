@@ -133,20 +133,33 @@ h2 {
 .icon-image {
     width: 49px;
     height: 26px;
-    background-image: url("../assets/svg/white-logo.svg");
+    background-image: url("../assets/svg/menu/white-logo.svg");
 }
 
 .menu-icon {
     width: 32px;
     height: 18px;
-    background-image: url("../assets/svg/welcome/menu.svg");
+    background-image: url("../assets/svg/menu/menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
     transition: background-color 1s,
                 background-image 1s;
     display: none;
 }
 
 .menu-icon:hover {
-    background-image: url("../assets/svg/welcome/menu-hover.svg");
+    background-image: url("../assets/svg/menu/menu-hover.svg");
+}
+
+.menu-arrow {
+    width: 12px;
+    height: 12px;
+    background-image: url("../assets/svg/menu/menu-arrow.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-color 1s,
+                background-image 1s;
+    display: none;
 }
 
 .icon-text {
@@ -194,6 +207,10 @@ h2 {
 
 .navigation-link:hover {
     color: var(--hover-gold);
+}
+
+.navigation-link:hover .menu-arrow {
+    background-image: url("../assets/svg/menu/menu-arrow-hover.svg");
 }
 
 .social-list {
