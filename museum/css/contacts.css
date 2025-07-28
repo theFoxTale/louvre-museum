@@ -32,3 +32,35 @@
     color: var(--text-dark);
     display: block;
 }
+
+@media (max-width: 1024px) {
+    .map-section {
+        padding: 83px 0 63px;
+    }
+
+    .map-container {
+        width: 694px;
+        height: 454px;
+    }
+
+    .map-header {
+        font-size: 24px;
+    }
+
+    .text-with-margin {
+        margin-bottom: 35px;
+    }
+
+    .map-description {
+        font-size: 20px;
+        margin: 15px 0 0;
+    }
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 420px) {
+
+}

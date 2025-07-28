@@ -12,6 +12,7 @@
 .tickets-image {
     width: 720px;
     height: 550px;
+    object-fit: cover;
 }
 
 .ticket-type-section {
@@ -138,6 +139,7 @@
 .buy-button {
     width: 175px;
     height: 50px;
+    border: 0;
     background-color: var(--background-black);
     font-family: Roboto, sans-serif;
     font-weight: 300;
@@ -163,4 +165,43 @@
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
+}
+
+@media (max-width: 1024px) {
+    .ticket-section {
+        padding: 83px 0 60px;
+    }
+
+    .tickets-image {
+        width: 700px;
+        height: 440px;
+    }
+
+    .ticket-type-section {
+        display: none;
+    }
+
+    .amount-block {
+        width: 175px;
+    }
+
+    .number-text-bottom {
+        margin: 25px 0 10px;
+    }
+
+    .ticket-count-section {
+        align-items: start;
+    }
+
+    .total-text {
+        margin: 25px 0 49px;
+    }
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 420px) {
+
 }

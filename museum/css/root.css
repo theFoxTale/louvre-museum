@@ -353,6 +353,15 @@ h2 {
     .with-top-distance {
         padding-top: 60px !important;
     }
+
+    .footer-left-part {
+        gap: 45px;
+        margin-top: 60px;
+    }
+
+    .footer-navigation-list {
+        column-gap: 100px;
+    }
 }
 
 @media (max-width: 768px) {
