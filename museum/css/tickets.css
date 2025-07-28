@@ -164,3 +164,42 @@
     background-attachment: fixed;
     background-position: center;
 }
+
+@media (max-width: 1024px) {
+    .ticket-section {
+        padding: 83px 0 60px;
+    }
+
+    .tickets-image {
+        width: 700px;
+        height: 440px;
+    }
+
+    .ticket-type-section {
+        display: none;
+    }
+
+    .amount-block {
+        width: 175px;
+    }
+
+    .number-text-bottom {
+        margin: 25px 0 10px;
+    }
+
+    .ticket-count-section {
+        align-items: start;
+    }
+
+    .total-text {
+        margin: 25px 0 49px;
+    }
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 420px) {
+
+}
