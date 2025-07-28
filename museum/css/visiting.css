@@ -95,7 +95,30 @@
 }
 
 @media (max-width: 768px) {
+    .image_card {
+        width: 280px;
+        height: 180px;
+    }
 
+    .cards-container {
+        gap: 40px 0;
+        margin-top: 63px;
+        padding-bottom: 80px;
+    }
+
+    .card-link {
+        margin-left: 56px;
+    }
+
+    .image-card-title {
+        font-size: 22px;
+        letter-spacing: 3px;
+    }
+
+    .image-card-first-line {
+        font-size: 18px;
+        margin: 22px 0 0;
+    }
 }
 
 @media (max-width: 420px) {
