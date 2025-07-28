@@ -136,6 +136,19 @@ h2 {
     background-image: url("../assets/svg/white-logo.svg");
 }
 
+.menu-icon {
+    width: 32px;
+    height: 18px;
+    background-image: url("../assets/svg/welcome/menu.svg");
+    transition: background-color 1s,
+                background-image 1s;
+    display: none;
+}
+
+.menu-icon:hover {
+    background-image: url("../assets/svg/welcome/menu-hover.svg");
+}
+
 .icon-text {
     font-family: Forum, sans-serif;
     font-weight: 400;
