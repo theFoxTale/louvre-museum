@@ -49,6 +49,10 @@
     display: none;
 }
 
+.gallery-420 {
+    display: none;
+}
+
 @media (max-width: 1024px) {
     .gallery-container {
         height: 1460px;
@@ -82,10 +86,6 @@
         margin-top: 40px;
     }
 
-    .gallery-1920 {
-        display: none;
-    }
-
     .gallery-1240 {
         display: none;
     }
@@ -100,5 +100,19 @@
 }
 
 @media (max-width: 420px) {
+    .gallery-container {
+        height: 757px;
+    }
 
+    .gallery-768 {
+        display: none;
+    }
+
+    .gallery-420 {
+        display: grid;
+    }
+
+    .gallery-gradient {
+        height: 112px;
+    }
 }

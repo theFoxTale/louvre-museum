@@ -54,6 +54,7 @@ p {
 }
 
 .footer-left-part {
+    width: 100%;
     display: flex;
     align-items: start;
     gap: 145px;
@@ -139,6 +140,9 @@ h2 {
     width: 49px;
     height: 26px;
     background-image: url("../assets/svg/menu/white-logo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
 }
 
 .menu-icon {
@@ -367,6 +371,7 @@ h2 {
     .content-container {
         max-width: 723px;
     }
+
     .header-container {
         height: 110px;
     }
@@ -444,7 +449,20 @@ h2 {
 
 @media (max-width: 420px) {
     .content-container {
-        max-width: 420px;
+        max-width: 380px;
+    }
+
+    .header-container {
+        height: 90px;
+    }
+
+    .icon-image {
+        width: 29px;
+        height: 16px;
+    }
+
+    .icon-text {
+        font-size: 16px;
     }
 
     h2 {
@@ -452,19 +470,50 @@ h2 {
         line-height: 40px !important;
     }
 
-    .menu-icon {
-        display: block;
+    .footer-left-part {
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 40px;
     }
 
-    .menu-arrow {
-        display: block;
+    .footer-navigation-list {
+        margin: 0;
+        column-count: 3;
+        column-gap: 30px;
     }
 
-    .header-navigation {
+    .column-with-gap {
+        margin-bottom: 30px;
+    }
+
+    .third-column-gap {
+        margin-bottom: 30px;
+    }
+
+    .navigation-link {
+        width: 122px;
+        font-size: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .social-list {
+        gap: 5px;
+        margin: 0 0 40px;
+    }
+
+    .bottom-flex {
+        margin: 40px 0 0;
+        align-self: center;
+    }
+
+    .footer-down-text {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .school-text {
         display: none;
-    }
-
-    .underline-title::after {
-        bottom: -20px;
     }
 }

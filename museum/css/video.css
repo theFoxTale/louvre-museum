@@ -151,8 +151,11 @@
 .video-arrow {
     width: 10px;
     height: 12px;
-    transition: background-image 1s;
     cursor: pointer;
+    transition: background-image 1s;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 .video-before {
@@ -308,5 +311,74 @@
 }
 
 @media (max-width: 420px) {
+    .video-header-container {
+        padding: 40px 0 20px;
+    }
 
+    .player-container {
+        height: 172px;
+    }
+
+    .big-play-button {
+        background-size: 50px 50px;
+    }
+
+    .player-actions-container {
+        height: 50px;
+        padding: 0 20px;
+    }
+
+    .slider {
+        height: 4px;
+    }
+
+    .slider::-webkit-slider-thumb {
+        width: 10px;
+        height: 10px;
+    }
+
+    .play-slider {
+        display: none;
+    }
+
+    .volume-slider {
+        width: 200px;
+    }
+
+    .play-button {
+        height: 18px;
+    }
+
+    .volume-button {
+        height: 18px;
+    }
+
+    .expand-button {
+        width: 18px;
+        height: 18px;
+    }
+
+    .mini-video-container {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 40px 0;
+        column-gap: 20px;
+    }
+
+    .mini-video {
+        height: 101px;
+    }
+
+    .mini-video-controls {
+        padding-bottom: 40px;
+    }
+
+    .video-arrow {
+        width: 7px;
+        height: 8px;
+    }
+
+    .video-dot {
+        width: 8px;
+        height: 8px;
+    }
 }
