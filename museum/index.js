@@ -4,7 +4,6 @@ function clickSlider(slider) {
     slider.style.background = `linear-gradient(to right, var(--dark-red) 0%, var(--dark-red) ${value}%, var(--slider-grey) ${value}%, var(--slider-grey) 100%)`;
 }
 
-let adaptiveMenuShown = false;
 function toggleAdaptiveMenu() {
     const menuIcon = document.querySelector('.menu-icon');
     menuIcon.classList.toggle('menu-open');
