@@ -56,8 +56,8 @@ p {
 .footer-left-part {
     display: flex;
     align-items: start;
-    gap: 145px;
-    margin-top: 75px;
+    gap: 140px;
+    margin-top: 80px;
 }
 
 .bottom-flex {
@@ -116,6 +116,7 @@ h2 {
 .underline-title {
     position: relative;
 }
+
 .underline-title::after {
     content: "";
     position: absolute;
@@ -192,7 +193,7 @@ h2 {
     list-style: none;
     column-count: 2;
     column-gap: 150px;
-    margin: 0 0 50px;
+    margin: 5px 0 50px;
     padding: 0;
 }
 

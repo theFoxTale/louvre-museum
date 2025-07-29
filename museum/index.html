@@ -159,9 +159,9 @@
         <section id="explore-section" class="section dark-section">
             <div class="content-container explore-container">
                 <div class="explore-text-container">
-                    <h2 class="underline-title with-bottom-distance">Picture explore</h2>
+                    <h2 class="underline-title">Picture explore</h2>
 
-                    <p class="explore-text with-top-distance">Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the Spanish Golden Age.</p>
+                    <p class="explore-text first-explore-row">Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the Spanish Golden Age.</p>
                     <p class="explore-text">It was cleaned in 1984 to remove a <span class="explore-gold-text">"yellow veil"</span> of dust that had gathered since the previous restoration in the 19th century.</p>
                     <p class="explore-text">The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different.</p>
                 </div>
@@ -190,11 +190,11 @@
                 <div class="player-actions-container">
                     <button type="button" class="play-button"></button>
                     <label class="play-slider">
-                        <input type="range" value="40" min="0" max="100" step="1" class="slider">
+                        <input type="range" value="40" min="0" max="100" step="1" class="slider" oninput="clickSlider(this);">
                     </label>
                     <button type="button" class="volume-button"></button>
                     <label class="volume-slider">
-                        <input type="range" value="40" min="0" max="100" step="1" class="slider">
+                        <input type="range" value="40" min="0" max="100" step="1" class="slider" oninput="clickSlider(this);">
                     </label>
                     <button type="button" class="expand-button"></button>
                 </div>
@@ -280,12 +280,12 @@
                                 Permanent exhibition
                             </label>
                             <label class="radio-button-text">
-                                <input type="radio" checked="checked" name="ticket-type">
+                                <input type="radio" name="ticket-type">
                                 <span class="checkmark"></span>
                                 Temporary exhibition
                             </label>
                             <label class="radio-button-text">
-                                <input type="radio" checked="checked" name="ticket-type">
+                                <input type="radio" name="ticket-type">
                                 <span class="checkmark"></span>
                                 Combined Admission
                             </label>
