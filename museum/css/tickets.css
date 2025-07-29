@@ -224,11 +224,15 @@
     }
 
     .number-text-bottom {
-        margin: 25px 0 10px;
+        margin: 22px 0 10px;
     }
 
     .total-text {
         margin: 40px 0;
+    }
+
+    .parallax-image-container {
+        height: 300px;
     }
 }
 

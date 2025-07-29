@@ -345,6 +345,7 @@ h2 {
         gap: 25px !important;
         z-index: 5;
         transition: left 1s;
+        margin: 0;
     }
 
     .navigation-link {
@@ -403,6 +404,7 @@ h2 {
         gap: 25px !important;
         z-index: 5;
         transition: left 1s;
+        margin: 0;
     }
 
     .navigation-link {
@@ -436,8 +438,8 @@ h2 {
     }
 
     .footer-navigation-list {
-        column-gap: 184px;
-        margin: 0 0 40px;
+        column-gap: 134px;
+        margin: 10px 18px 45px;
     }
 
     .bottom-flex {
@@ -464,7 +466,7 @@ h2 {
         border-bottom: 1px solid #FFFFFF80;
         position: absolute;
         left: -1420px;
-        top: 453px;
+        top: 440px;
         width: 658px;
         transition: left 1s;
     }
@@ -473,7 +475,7 @@ h2 {
         display: block;
         position: absolute;
         left: -1420px;
-        top: 878px;
+        top: 870px;
         margin-left: 160px;
         transition: left 1s;
     }

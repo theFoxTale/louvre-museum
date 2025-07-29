@@ -241,7 +241,7 @@
 
 @media (max-width: 768px) {
     .video-header-container {
-        padding: 60px 0 20px;
+        padding: 40px 0 20px;
     }
 
     .player-container {
@@ -307,6 +307,11 @@
 
     .mini-video-controls {
         padding-bottom: 80px;
+    }
+
+    .video-dot {
+        width: 10px;
+        height: 10px;
     }
 }
 

@@ -60,7 +60,7 @@
 @media (max-width: 768px) {
     .map-section {
         flex-direction: column;
-        padding: 67px 0 63px;
+        padding: 60px 0 63px;
     }
 
     .map-container {

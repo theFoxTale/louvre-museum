@@ -108,11 +108,11 @@
     .cards-container {
         gap: 40px 0;
         margin-top: 63px;
-        padding-bottom: 80px;
+        padding-bottom: 73px;
     }
 
     .card-link {
-        margin-left: 56px;
+        margin-left: 55px;
     }
 
     .image-card-title {
@@ -122,7 +122,15 @@
 
     .image-card-first-line {
         font-size: 18px;
-        margin: 22px 0 0;
+        margin: 17px 0 0;
+    }
+
+    .underline-card {
+        margin-top: 17px;
+    }
+
+    .underline-card::after {
+        bottom: -7px;
     }
 }
 
