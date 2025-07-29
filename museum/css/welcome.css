@@ -17,6 +17,7 @@
     background-position: calc(100%) calc(100% - 10px);
     background-size: 1000px 750px;
     background-repeat: no-repeat;
+    transition: opacity 1s;
 }
 
 h1 {
@@ -81,10 +82,10 @@ h1 {
     position: absolute;
     right: 0;
     bottom: 0;
-
     display: flex;
     justify-content: center;
     gap: 60px;
+    transition: opacity 1s;
 }
 
 .welcome-pages-container {
@@ -122,6 +123,7 @@ h1 {
     height: 8px;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: contain;
     transition: background-image 1s;
     cursor: pointer;
 }
@@ -166,14 +168,114 @@ h1 {
         background-image: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%), url("../assets/img/welcome/1.jpg");
         background-size: 700px 525px;
     }
+
+    .welcome-slider {
+        width: 100%;
+        justify-content: right;
+        padding-right: 75px;
+    }
 }
 
 @media (max-width: 768px) {
+    .relative-section {
+        height: auto;
+    }
 
+    .height-for-menu {
+        height: 861px !important;
+    }
+
+    .discover-button-link {
+        display: none;
+    }
+
+    .welcome-text {
+        text-align: center;
+        position: static;
+        margin-bottom: 50px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .welcome-image-container {
+        height: 546px;
+        background-image: url("../assets/img/welcome/1.jpg");
+        background-size: contain;
+        background-position: center;
+    }
+
+    .welcome-slider {
+        position: static;
+        width: 100%;
+        height: 110px;
+        gap: 45px;
+        justify-content: center;
+        padding-right: 0;
+    }
+
+    .welcome-pages-container p {
+        font-size: 20px;
+    }
+
+    .welcome-button {
+        width: 12px;
+        height: 12px;
+    }
+
+    .hidden-by-menu-optional {
+        opacity: 0;
+    }
 }
 
 @media (max-width: 420px) {
+    .height-for-menu {
+        height: 540px !important;
+    }
 
+    h1 {
+        font-size: 16px;
+    }
+
+    .welcome-image-container {
+        height: 285px;
+        background-image: url("../assets/img/welcome/1.jpg");
+        background-size: contain;
+        background-position: center;
+    }
+
+    .welcome-slider {
+        position: static;
+        width: 100%;
+        height: 80px;
+        gap: 25px;
+    }
+
+    .welcome-pages-container {
+        gap: 5px;
+    }
+
+    .welcome-pages-container p {
+        font-size: 16px;
+    }
+
+    .welcome-buttons-container {
+        gap: 10px;
+    }
+
+    .welcome-button {
+        width: 7px;
+        height: 7px;
+    }
+
+    .welcome-arrows {
+        gap: 15px;
+    }
+
+    .arrow-container {
+        width: 20px;
+    }
 }
 
 
