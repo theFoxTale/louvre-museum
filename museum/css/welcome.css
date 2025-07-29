@@ -258,6 +258,10 @@ h1 {
         font-size: 16px;
     }
 
+    .welcome-header-text {
+        line-height: 40px !important;
+    }
+
     .welcome-image-container {
         height: 285px;
         background-image: url("../assets/img/welcome/1.jpg");

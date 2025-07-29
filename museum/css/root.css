@@ -517,7 +517,7 @@ h2 {
     }
 
     .header-container {
-        height: 90px;
+        height: 94px;
     }
 
     .icon-image {
@@ -532,6 +532,10 @@ h2 {
     h2 {
         font-size: 28px !important;
         line-height: 40px !important;
+    }
+
+    .underline-title::after {
+        bottom: -23px !important;
     }
 
     .footer-left-part {
@@ -615,11 +619,15 @@ h2 {
     }
 
     .social-navigation {
-        top: 542px;
+        top: 545px;
         margin-left: 25px;
     }
 
     .social-navigation-list {
         gap: 5px;
+    }
+
+    .icon-block {
+        gap: 20px;
     }
 }

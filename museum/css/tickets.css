@@ -241,8 +241,8 @@
         flex-direction: column;
     }
     .tickets-image {
-        width: 360px;
-        height: 180px;
+        width: 380px;
+        height: 160px;
     }
 
     .ticket-count-section {
@@ -271,7 +271,7 @@
     .total-text {
         font-size: 16px;
         letter-spacing: 0;
-        margin: 40px 0;
+        margin: 38px 0 40px;
     }
 
     .buy-button {

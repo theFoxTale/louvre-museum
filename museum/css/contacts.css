@@ -7,6 +7,10 @@
 .map-container {
     width: 960px;
     height: 620px;
+    background-image: url("../assets/img/map.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
 }
 
 .map-header {
@@ -93,6 +97,7 @@
         width: 380px;
         height: 248px;
         margin-top: 40px;
+        background-image: url("../assets/img/mini-map.png");
     }
 
     .map-header {
