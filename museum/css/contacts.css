@@ -7,6 +7,10 @@
 .map-container {
     width: 960px;
     height: 620px;
+    background-image: url("../assets/img/map.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
 }
 
 .map-header {
@@ -48,7 +52,7 @@
     }
 
     .text-with-margin {
-        margin-bottom: 35px;
+        margin-bottom: 34px;
     }
 
     .map-description {
@@ -60,7 +64,7 @@
 @media (max-width: 768px) {
     .map-section {
         flex-direction: column;
-        padding: 67px 0 63px;
+        padding: 60px 0 63px;
     }
 
     .map-container {
@@ -93,6 +97,7 @@
         width: 380px;
         height: 248px;
         margin-top: 40px;
+        background-image: url("../assets/img/mini-map.png");
     }
 
     .map-header {

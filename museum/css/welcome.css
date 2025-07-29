@@ -153,6 +153,10 @@ h1 {
         top: 50px;
     }
 
+    .welcome-header-text {
+        line-height: 90px !important;
+    }
+
     h1 {
         font-size: 24px;
     }
@@ -173,12 +177,28 @@ h1 {
         width: 100%;
         justify-content: right;
         padding-right: 75px;
+        gap: 45px;
+    }
+
+    .welcome-button {
+        width: 12px;
+        height: 12px;
+    }
+
+    .navigation-link-header {
+        font-size: 20px !important;
     }
 }
 
 @media (max-width: 768px) {
+    .navigation-link-header {}
+
     .relative-section {
         height: auto;
+    }
+
+    .welcome-header-text {
+        line-height: 60px !important;
     }
 
     .height-for-menu {
@@ -209,7 +229,7 @@ h1 {
     .welcome-slider {
         position: static;
         width: 100%;
-        height: 110px;
+        height: 95px;
         gap: 45px;
         justify-content: center;
         padding-right: 0;
@@ -236,6 +256,10 @@ h1 {
 
     h1 {
         font-size: 16px;
+    }
+
+    .welcome-header-text {
+        line-height: 40px !important;
     }
 
     .welcome-image-container {

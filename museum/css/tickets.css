@@ -37,7 +37,7 @@
 }
 
 .amount-header {
-    margin: 0 0 25px;
+    margin: 0 0 15px;
 }
 
 .radio-button-text {
@@ -125,7 +125,8 @@
 }
 
 .number-text-bottom {
-    margin: 10px 0 15px;
+    margin: 10px 0 13px 25px;
+    align-self: flex-start;
 }
 
 .total-text {
@@ -185,16 +186,21 @@
         width: 175px;
     }
 
+    .amount-header {
+        margin: 0;
+    }
+
     .number-text-bottom {
-        margin: 25px 0 10px;
+        margin: 25px 0 11px;
     }
 
     .ticket-count-section {
         align-items: start;
+        margin-right: 29px;
     }
 
     .total-text {
-        margin: 25px 0 49px;
+        margin: 25px 0 70px;
     }
 }
 
@@ -218,11 +224,15 @@
     }
 
     .number-text-bottom {
-        margin: 25px 0 10px;
+        margin: 22px 0 10px;
     }
 
     .total-text {
         margin: 40px 0;
+    }
+
+    .parallax-image-container {
+        height: 300px;
     }
 }
 
@@ -231,8 +241,8 @@
         flex-direction: column;
     }
     .tickets-image {
-        width: 360px;
-        height: 180px;
+        width: 380px;
+        height: 160px;
     }
 
     .ticket-count-section {
@@ -261,7 +271,7 @@
     .total-text {
         font-size: 16px;
         letter-spacing: 0;
-        margin: 40px 0;
+        margin: 38px 0 40px;
     }
 
     .buy-button {

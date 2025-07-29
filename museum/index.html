@@ -32,37 +32,37 @@
             <nav class="header-navigation">
                 <ul class="header-navigation-list">
                     <li>
-                        <a href="#visiting-section" class="navigation-link">
+                        <a href="#visiting-section" class="navigation-link navigation-link-header">
                             Visiting
                             <div class="menu-arrow"></div>
                         </a>
                     </li>
                     <li>
-                        <a href="#explore-section" class="navigation-link">
+                        <a href="#explore-section" class="navigation-link navigation-link-header">
                             Explore
                             <div class="menu-arrow"></div>
                         </a>
                     </li>
                     <li>
-                        <a href="#video-section" class="navigation-link">
+                        <a href="#video-section" class="navigation-link navigation-link-header">
                             Video
                             <div class="menu-arrow"></div>
                         </a>
                     </li>
                     <li>
-                        <a href="#gallery-section" class="navigation-link">
+                        <a href="#gallery-section" class="navigation-link navigation-link-header">
                             Gallery
                             <div class="menu-arrow"></div>
                         </a>
                     </li>
                     <li>
-                        <a href="#tickets-section" class="navigation-link">
+                        <a href="#tickets-section" class="navigation-link navigation-link-header">
                             Tickets
                             <div class="menu-arrow"></div>
                         </a>
                     </li>
                     <li>
-                        <a href="#contacts-section" class="navigation-link">
+                        <a href="#contacts-section" class="navigation-link navigation-link-header">
                             Contacts
                             <div class="menu-arrow"></div>
                         </a>
@@ -114,7 +114,7 @@
         <section id="welcome-section" class="section dark-section">
             <div class="content-container relative-section">
                 <div class="welcome-text">
-                    <h2>Welcome<br>to the Louvre</h2>
+                    <h2 class="welcome-header-text">Welcome<br>to the Louvre</h2>
                     <h1>From the castle to the museum</h1>
 
                     <a class="discover-button-link" href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736" target="_blank" title="Go to Google Maps">
@@ -196,9 +196,9 @@
         <section id="explore-section" class="section dark-section">
             <div class="content-container explore-container">
                 <div class="explore-text-container">
-                    <h2 class="underline-title with-bottom-distance">Picture explore</h2>
+                    <h2 class="underline-title">Picture explore</h2>
 
-                    <p class="explore-text with-top-distance">Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the Spanish Golden Age.</p>
+                    <p class="explore-text first-explore-row">Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the Spanish Golden Age.</p>
                     <p class="explore-text medium-explore-text">It was cleaned in 1984 to remove a <span class="explore-gold-text">"yellow veil"</span> of dust that had gathered since the previous restoration in the 19th century.</p>
                     <p class="explore-text last-explore-text">The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different.</p>
                 </div>
@@ -225,16 +225,16 @@
                     <div class="big-play-button"></div>
                 </div>
                 <label>
-                    <input type="range" value="40" min="0" max="100" step="1" class="slider full-width-play-slider">
+                    <input type="range" value="40" min="0" max="100" step="1" class="slider full-width-play-slider" oninput="clickSlider(this);">
                 </label>
                 <div class="player-actions-container">
                     <button type="button" class="play-button"></button>
                     <label class="play-slider">
-                        <input type="range" value="40" min="0" max="100" step="1" class="slider">
+                        <input type="range" value="40" min="0" max="100" step="1" class="slider" oninput="clickSlider(this);">
                     </label>
                     <button type="button" class="volume-button"></button>
                     <label class="volume-slider">
-                        <input type="range" value="40" min="0" max="100" step="1" class="slider">
+                        <input type="range" value="40" min="0" max="100" step="1" class="slider" oninput="clickSlider(this);">
                     </label>
                     <button type="button" class="expand-button"></button>
                 </div>
@@ -370,12 +370,12 @@
                                 Permanent exhibition
                             </label>
                             <label class="radio-button-text">
-                                <input type="radio" checked="checked" name="ticket-type">
+                                <input type="radio" name="ticket-type">
                                 <span class="checkmark"></span>
                                 Temporary exhibition
                             </label>
                             <label class="radio-button-text">
-                                <input type="radio" checked="checked" name="ticket-type">
+                                <input type="radio" name="ticket-type">
                                 <span class="checkmark"></span>
                                 Combined Admission
                             </label>
@@ -421,7 +421,7 @@
                         <a class="map-description map-hidden-link" title="Phone us" href="tel:+33(0)140205050">phone: +33(0) 1 40 20 50 50</a>
                         <a class="map-description map-hidden-link" target="_blank" title="Send us a message" href="mailto:info@louvre.fr">mail: info@louvre.fr</a>
                     </div>
-                    <img alt="map image" class="map-container" src="assets/img/map.png">
+                    <div class="map-container"></div>
                 </div>
             </div>
         </section>
