@@ -309,6 +309,15 @@ h2 {
     background-image: url("../assets/svg/social/hover/Pinterest.svg");
 }
 
+/* Navigation additions */
+.navigation-images {
+    display: none;
+}
+
+.social-navigation {
+    display: none;
+}
+
 @media (max-width: 1024px) {
     .content-container {
         max-width: 984px;
@@ -387,7 +396,7 @@ h2 {
     .header-navigation-list {
         position: absolute;
         left: -420px;
-        top: 165px;
+        top: 145px;
         flex-direction: column;
         align-items: start !important;
         gap: 25px !important;
@@ -444,6 +453,58 @@ h2 {
 
     .footer-down-text {
         margin: 40px 0;
+    }
+
+    .navigation-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding-bottom: 35px;
+        border-bottom: 1px solid #FFFFFF80;
+        position: absolute;
+        left: -1420px;
+        top: 453px;
+        width: 658px;
+        transition: left 1s;
+    }
+
+    .social-navigation {
+        display: block;
+        position: absolute;
+        left: -1420px;
+        top: 878px;
+        margin-left: 160px;
+        transition: left 1s;
+    }
+
+    .social-navigation-list {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        padding: 0;
+    }
+
+    .menu-image {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .navigation-top-image {
+        grid-column: span 2;
+        background-image: url("../assets/img/welcome/navigation-top.png");
+        height: 194px;
+    }
+
+    .navigation-left-image {
+        background-image: url("../assets/img/welcome/navigation-left.png");
+        height: 161px;
+    }
+
+    .navigation-right-image {
+        background-image: url("../assets/img/welcome/navigation-right.png");
+        height: 161px;
     }
 }
 
@@ -515,5 +576,47 @@ h2 {
 
     .school-text {
         display: none;
+    }
+
+    .header-navigation-list {
+        top: 125px;
+    }
+
+    .navigation-images {
+        display: grid;
+        grid-template-columns: repeat(3, 95px);
+        gap: 12px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #FFFFFF80;
+        position: absolute;
+        left: -1420px;
+        top: 423px;
+        width: 310px;
+        transition: left 1s;
+    }
+
+    .navigation-top-image {
+        grid-column: span 1;
+        background-image: url("../assets/img/welcome/image 15.png");
+        height: 95px;
+    }
+
+    .navigation-left-image {
+        background-image: url("../assets/img/welcome/image 3.png");
+        height: 95px;
+    }
+
+    .navigation-right-image {
+        background-image: url("../assets/img/welcome/image 4.png");
+        height: 95px;
+    }
+
+    .social-navigation {
+        top: 542px;
+        margin-left: 25px;
+    }
+
+    .social-navigation-list {
+        gap: 5px;
     }
 }
