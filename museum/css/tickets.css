@@ -37,7 +37,7 @@
 }
 
 .amount-header {
-    margin: 0 0 25px;
+    margin: 0 0 15px;
 }
 
 .radio-button-text {
@@ -125,7 +125,8 @@
 }
 
 .number-text-bottom {
-    margin: 10px 0 15px;
+    margin: 10px 0 13px 25px;
+    align-self: flex-start;
 }
 
 .total-text {
