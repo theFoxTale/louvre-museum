@@ -186,16 +186,21 @@
         width: 175px;
     }
 
+    .amount-header {
+        margin: 0;
+    }
+
     .number-text-bottom {
-        margin: 25px 0 10px;
+        margin: 25px 0 11px;
     }
 
     .ticket-count-section {
         align-items: start;
+        margin-right: 29px;
     }
 
     .total-text {
-        margin: 25px 0 49px;
+        margin: 25px 0 70px;
     }
 }
 

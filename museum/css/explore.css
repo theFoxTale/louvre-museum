@@ -85,6 +85,14 @@
     .last-explore-text {
         display: none;
     }
+
+    .first-explore-row {
+        padding-top: 82px;
+    }
+
+    .explore-text-container {
+        flex-basis: auto;
+    }
 }
 
 @media (max-width: 768px) {

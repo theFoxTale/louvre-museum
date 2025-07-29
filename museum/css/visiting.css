@@ -83,11 +83,15 @@
 
     .image-card-first-line {
         font-size: 20px;
-        margin: 22px 0 0;
+        margin: 19px 0 0;
     }
 
     .image-cars-second-line {
         font-size: 16px;
+    }
+
+    .underline-card {
+        margin-top: 20px;
     }
 
     .underline-card::after {

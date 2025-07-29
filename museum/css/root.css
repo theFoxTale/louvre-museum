@@ -368,12 +368,12 @@ h2 {
     }
 
     .footer-left-part {
-        gap: 45px;
+        gap: 40px;
         margin-top: 60px;
     }
 
     .footer-navigation-list {
-        column-gap: 100px;
+        column-gap: 85px;
     }
 }
 
