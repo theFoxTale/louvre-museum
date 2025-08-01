@@ -52,10 +52,115 @@
 }
 
 .underline-card:hover::after {
-    width: 100%;
+    width: 100% !important;
 }
 
 .card-link {
     text-decoration: none;
     color: var(--text-dark);
+}
+
+@media (max-width: 1024px) {
+    .image_card {
+        width: 330px;
+        height: 215px;
+    }
+
+    .cards-container {
+        gap: 60px 0;
+        margin-top: 83px;
+        padding-bottom: 60px;
+    }
+
+    .card-link {
+        margin-left: 108px;
+    }
+
+    .image-card-title {
+        font-size: 28px;
+        letter-spacing: 3px;
+    }
+
+    .image-card-first-line {
+        font-size: 20px;
+        margin: 19px 0 0;
+    }
+
+    .image-cars-second-line {
+        font-size: 16px;
+    }
+
+    .underline-card {
+        margin-top: 20px;
+    }
+
+    .underline-card::after {
+        width: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .image_card {
+        width: 280px;
+        height: 180px;
+    }
+
+    .cards-container {
+        gap: 40px 0;
+        margin-top: 63px;
+        padding-bottom: 73px;
+    }
+
+    .card-link {
+        margin-left: 55px;
+    }
+
+    .image-card-title {
+        font-size: 22px;
+        letter-spacing: 3px;
+    }
+
+    .image-card-first-line {
+        font-size: 18px;
+        margin: 17px 0 0;
+    }
+
+    .underline-card {
+        margin-top: 17px;
+    }
+
+    .underline-card::after {
+        bottom: -7px;
+    }
+}
+
+@media (max-width: 420px) {
+    .card-link {
+        margin-left: 50px;
+    }
+
+    .underline-card {
+        margin-top: 16px;
+    }
+
+    .underline-card::after {
+        bottom: -4px;
+    }
+
+    .image-card-title {
+        font-size: 18px;
+        letter-spacing: 5px;
+        margin-bottom: 15px;
+    }
+
+    .image-card-first-line {
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .cards-container {
+        gap: 37px 0;
+        margin-top: 63px;
+        padding-bottom: 40px;
+    }
 }
