@@ -121,27 +121,16 @@ h1 {
 .arrow-container {
     width: 30px;
     height: 8px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    transition: background-image 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-white);
+    transition: color 1s;
     cursor: pointer;
 }
 
-.arrow-left {
-    background-image: url("../assets/svg/welcome/arrow-left.svg");
-}
-
-.arrow-left:hover {
-    background-image: url("../assets/svg/welcome/arrow-left-hover.svg");
-}
-
-.arrow-right {
-    background-image: url("../assets/svg/welcome/arrow-right.svg");
-}
-
-.arrow-right:hover {
-    background-image: url("../assets/svg/welcome/arrow-right-hover.svg");
+.arrow-container:hover {
+    color: var(--hover-gold);
 }
 
 @media (max-width: 1024px) {
