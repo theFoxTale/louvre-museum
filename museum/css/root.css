@@ -183,11 +183,10 @@ h2 {
 .menu-arrow {
     width: 12px;
     height: 12px;
-    background-image: url("../assets/svg/menu/menu-arrow.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: background-color 1s,
-                background-image 1s;
+    color: white;
+    transition: color 1s;
+    justify-content: center;
+    align-items: center;
     display: none;
 }
 
@@ -247,7 +246,7 @@ h2 {
 }
 
 .navigation-link:hover .menu-arrow {
-    background-image: url("../assets/svg/menu/menu-arrow-hover.svg");
+    color: var(--hover-gold);
 }
 
 .social-list {
@@ -309,7 +308,7 @@ h2 {
     }
 
     .menu-arrow {
-        display: block;
+        display: flex;
     }
 
     .header-navigation-list {
@@ -368,7 +367,7 @@ h2 {
     }
 
     .menu-arrow {
-        display: block;
+        display: flex;
     }
 
     .header-navigation-list {
