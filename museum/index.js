@@ -1,3 +1,16 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const popUp = document.querySelector('.pop-up');
+    popUp.addEventListener('click', (event) => {
+        if (event.target.classList.contains('pop-up')) {
+            popUp.classList.toggle('invisible-element');
+        }
+    });
+});
+
+function closePopUp() {
+    const popUp = document.querySelector('.pop-up');
+    popUp.classList.toggle('invisible-element');
+}
 
 function clickSlider(slider) {
     const value = slider.value;
@@ -28,4 +41,9 @@ function toggleAdaptiveMenu() {
 
     const navigationSocial = document.querySelector('.social-navigation');
     navigationSocial.classList.toggle('header-navigation-list-on-left');
+}
+
+function clickBuyTicket() {
+    const popUp = document.querySelector('.pop-up');
+    popUp.classList.toggle('invisible-element');
 }

@@ -23,6 +23,10 @@ p {
     display: none;
 }
 
+.invisible-element {
+    visibility: hidden;
+}
+
 .content-container {
     max-width: 1440px;
     margin: 0 auto;
@@ -94,7 +98,7 @@ p {
 /* Sections */
 h2 {
     text-transform: uppercase;
-    font-family: Forum, sans-serif;
+    font-family: Forum, serif;
     font-weight: 400;
     font-size: 80px;
     line-height: 90px;
@@ -191,7 +195,7 @@ h2 {
 }
 
 .icon-text {
-    font-family: Forum, sans-serif;
+    font-family: Forum, serif;
     font-weight: 400;
     font-size: 28px;
     letter-spacing: 5px;
