@@ -217,6 +217,7 @@ h2 {
 
 .header-navigation-list-on-left {
     left: 55px !important;
+    z-index: 5;
 }
 
 .footer-navigation-list {

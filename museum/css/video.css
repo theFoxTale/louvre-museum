@@ -42,6 +42,8 @@
 }
 
 .main-play-button {
+    width: 200px;
+    height: 220px;
     color: var(--text-white);
     transition: color 1s;
 }
@@ -211,8 +213,9 @@
         height: 444px;
     }
 
-    .big-play-button {
-        background-size: 152px 152px;
+    .main-play-button {
+        width: 152px;
+        height: 152px;
     }
 
     .player-actions-container {
@@ -274,8 +277,9 @@
         height: 329px;
     }
 
-    .big-play-button {
-        background-size: 80px 80px;
+    .main-play-button {
+        width: 80px;
+        height: 80px;
     }
 
     .full-width-play-slider {
@@ -356,8 +360,9 @@
         height: 172px;
     }
 
-    .big-play-button {
-        background-size: 50px 50px;
+    .main-play-button {
+        width: 50px;
+        height: 50px;
     }
 
     .player-actions-container {
