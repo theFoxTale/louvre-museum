@@ -1,12 +1,13 @@
-.relative-section {
+.welcome-section {
     position: relative;
     height: 810px;
+    transition: opacity 0.7s ease;
 }
 
 .welcome-text {
     position: absolute;
     top: 150px;
-    transition: opacity 1s;
+    transition: opacity 0.7s ease;
 }
 
 .welcome-image-container {
@@ -17,7 +18,6 @@
     background-position: calc(100%) calc(100% - 10px);
     background-size: 1000px 750px;
     background-repeat: no-repeat;
-    transition: opacity 1s;
 }
 
 h1 {
@@ -85,7 +85,6 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 60px;
-    transition: opacity 1s;
 }
 
 .welcome-pages-container {
@@ -134,7 +133,7 @@ h1 {
 }
 
 @media (max-width: 1024px) {
-    .relative-section {
+    .welcome-section {
         height: 585px;
     }
 
@@ -177,21 +176,21 @@ h1 {
     .navigation-link-header {
         font-size: 20px !important;
     }
+
+    .hidden-by-menu .welcome-text {
+        opacity: 0;
+    }
 }
 
 @media (max-width: 768px) {
     .navigation-link-header {}
 
-    .relative-section {
-        height: auto;
+    .welcome-section {
+        height: 861px;
     }
 
     .welcome-header-text {
         line-height: 60px !important;
-    }
-
-    .height-for-menu {
-        height: 861px !important;
     }
 
     .discover-button-link {
@@ -233,14 +232,14 @@ h1 {
         height: 12px;
     }
 
-    .hidden-by-menu-optional {
+    .hidden-by-menu {
         opacity: 0;
     }
 }
 
 @media (max-width: 420px) {
-    .height-for-menu {
-        height: 540px !important;
+    .welcome-section {
+        height: 540px;
     }
 
     h1 {

@@ -149,39 +149,53 @@ h2 {
 .icon-image {
     width: 49px;
     height: 26px;
-    background-image: url("../assets/svg/menu/white-logo.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
+    color: var(--background-white);
 }
 
 .menu-icon {
     width: 32px;
-    height: 18px;
-    background-image: url("../assets/svg/menu/menu.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: background-color 1s,
-                background-image 1s;
-    display: none;
-}
-
-.menu-icon:hover {
-    background-image: url("../assets/svg/menu/menu-hover.svg");
-}
-
-.menu-open {
-    width: 25px;
     height: 25px;
-    background-image: url("../assets/svg/menu/menu-close.svg");
+    display: none;
+    cursor: pointer;
+    position: relative;
 }
 
-.menu-open:hover {
-    background-image: url("../assets/svg/menu/menu-close-hover.svg");
+.menu-icon-span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--background-white);
+    transition: all 0.6s ease;
+    transform-origin: center;
 }
 
-.hidden-by-menu {
+.menu-icon-span:nth-child(1) {
+    top: 4px;
+}
+.menu-icon-span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+.menu-icon-span:nth-child(3) {
+    bottom: 4px;
+}
+
+.menu-icon:hover .menu-icon-span {
+    background-color: var(--hover-gold);
+}
+
+.menu-icon.is-open .menu-icon-span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+}
+.menu-icon.is-open .menu-icon-span:nth-child(2) {
     opacity: 0;
+    transform: translateY(-50%) scaleX(0);
+}
+.menu-icon.is-open .menu-icon-span:nth-child(3) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
 }
 
 .menu-arrow {
@@ -208,6 +222,7 @@ h2 {
 /* Navigation */
 .header-navigation {
     overflow-x: hidden;
+    transition: left 1s;
 }
 
 .header-navigation-list {
@@ -219,7 +234,7 @@ h2 {
     padding: 0;
 }
 
-.header-navigation-list-on-left {
+.header-navigation-active {
     left: 55px !important;
     z-index: 5;
 }
@@ -295,7 +310,7 @@ h2 {
     display: none;
 }
 
-.social-navigation {
+.social-navigation-list {
     display: none;
 }
 
@@ -316,15 +331,17 @@ h2 {
         display: flex;
     }
 
-    .header-navigation-list {
+    .header-navigation {
         position: absolute;
         left: -420px;
         top: 165px;
-        flex-direction: column;
-        align-items: start !important;
-        gap: 25px !important;
         z-index: 5;
-        transition: left 1s;
+    }
+
+    .header-navigation-list {
+        flex-direction: column;
+        align-items: start;
+        gap: 25px;
         margin: 0;
     }
 
@@ -375,16 +392,9 @@ h2 {
         display: flex;
     }
 
-    .header-navigation-list {
-        position: absolute;
-        left: -420px;
+    .header-navigation {
+        left: -820px;
         top: 145px;
-        flex-direction: column;
-        align-items: start !important;
-        gap: 25px !important;
-        z-index: 5;
-        transition: left 1s;
-        margin: 0;
     }
 
     .navigation-link {
@@ -442,22 +452,9 @@ h2 {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 20px;
-        padding-bottom: 35px;
+        padding: 30px 0 35px;
         border-bottom: 1px solid #FFFFFF80;
-        position: absolute;
-        left: -1420px;
-        top: 440px;
         width: 658px;
-        transition: left 1s;
-    }
-
-    .social-navigation {
-        display: block;
-        position: absolute;
-        left: -1420px;
-        top: 870px;
-        margin-left: 160px;
-        transition: left 1s;
     }
 
     .social-navigation-list {
@@ -465,7 +462,9 @@ h2 {
         display: flex;
         gap: 25px;
         align-items: center;
+        justify-content: center;
         padding: 0;
+        margin: 35px 0;
     }
 
     .menu-image {
@@ -565,7 +564,7 @@ h2 {
         display: none;
     }
 
-    .header-navigation-list {
+    .header-navigation {
         top: 125px;
     }
 
@@ -575,11 +574,7 @@ h2 {
         gap: 12px;
         padding-bottom: 20px;
         border-bottom: 1px solid #FFFFFF80;
-        position: absolute;
-        left: -1420px;
-        top: 423px;
         width: 310px;
-        transition: left 1s;
     }
 
     .navigation-top-image {
@@ -598,13 +593,9 @@ h2 {
         height: 95px;
     }
 
-    .social-navigation {
-        top: 545px;
-        margin-left: 25px;
-    }
-
     .social-navigation-list {
         gap: 5px;
+        margin: 23px 0;
     }
 
     .icon-block {
