@@ -16,14 +16,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const popUp = document.querySelector('.pop-up');
     popUp.addEventListener('click', (event) => {
         if (event.target.classList.contains('pop-up')) {
-            popUp.classList.toggle('invisible-element');
+            togglePopUp(popUp);
         }
     });
 });
 
-function closePopUp() {
-    const popUp = document.querySelector('.pop-up');
+function togglePopUp(element = undefined) {
+    const popUp = element ?? document.querySelector('.pop-up');
     popUp.classList.toggle('invisible-element');
+    document.body.classList.toggle('popup-is-open');
 }
 
 function clickSlider(slider) {
@@ -43,9 +44,4 @@ function toggleAdaptiveMenu() {
 
     const navigation = document.querySelector('.header-navigation');
     navigation.classList.toggle('header-navigation-active');
-}
-
-function clickBuyTicket() {
-    const popUp = document.querySelector('.pop-up');
-    popUp.classList.toggle('invisible-element');
 }
