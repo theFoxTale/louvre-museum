@@ -34,21 +34,40 @@
 }
 
 .big-play-button {
-    background: url("../assets/svg/video/play_main.svg") no-repeat center center;
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-play-button {
+    width: 200px;
+    height: 220px;
+    color: var(--text-white);
+    transition: color 1s;
+}
+
+.main-play-button:hover {
+    color: var(--dark-red);
 }
 
 .play-button {
     width: 23px;
     height: 31px;
     border: 0;
-    background-image: url("../assets/svg/video/play.svg");
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    padding: 0;
     cursor: pointer;
+    background-color: transparent;
+    color: var(--video-standart);
+    transition: color 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-button:hover {
+    color: var(--video-hover);
 }
 
 .slider {
@@ -97,22 +116,36 @@
     width: 38px;
     height: 31px;
     border: 0;
-    background-image: url("../assets/svg/video/volume.svg");
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    padding: 0;
     cursor: pointer;
+    background-color: transparent;
+    color: var(--video-standart);
+    transition: color 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.volume-button:hover {
+    color: var(--video-hover);
 }
 
 .expand-button {
     width: 35px;
     height: 35px;
     border: 0;
-    background-image: url("../assets/svg/video/expand.svg");
-    background-color: transparent;
-    background-size: contain;
+    padding: 0;
     cursor: pointer;
+    background-color: transparent;
+    color: var(--video-standart);
+    transition: color 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.expand-button:hover {
+    color: var(--video-hover);
 }
 
 .mini-video-container {
@@ -151,27 +184,16 @@
 .video-arrow {
     width: 10px;
     height: 12px;
+    color: var(--dark-grey);
+    transition: color 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    transition: background-image 1s;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
 }
 
-.video-before {
-    background-image: url("../assets/svg/video/before.svg");
-}
-
-.video-before:hover {
-    background-image: url("../assets/svg/video/before-hovered.svg");
-}
-
-.video-after {
-    background-image: url("../assets/svg/video/after.svg");
-}
-
-.video-after:hover {
-    background-image: url("../assets/svg/video/after-hovered.svg");
+.video-arrow:hover {
+    color: var(--dark-red);
 }
 
 .video-unvisited {
@@ -191,8 +213,9 @@
         height: 444px;
     }
 
-    .big-play-button {
-        background-size: 152px 152px;
+    .main-play-button {
+        width: 152px;
+        height: 152px;
     }
 
     .player-actions-container {
@@ -254,8 +277,9 @@
         height: 329px;
     }
 
-    .big-play-button {
-        background-size: 80px 80px;
+    .main-play-button {
+        width: 80px;
+        height: 80px;
     }
 
     .full-width-play-slider {
@@ -336,8 +360,9 @@
         height: 172px;
     }
 
-    .big-play-button {
-        background-size: 50px 50px;
+    .main-play-button {
+        width: 50px;
+        height: 50px;
     }
 
     .player-actions-container {
