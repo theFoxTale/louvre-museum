@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function togglePopUp(element = undefined) {
     const popUp = element ?? document.querySelector('.pop-up');
-    popUp.classList.toggle('invisible-element');
+    popUp.classList.toggle('active');
     document.body.classList.toggle('popup-is-open');
 }
 

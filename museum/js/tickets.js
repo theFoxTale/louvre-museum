@@ -28,8 +28,18 @@ function setSumTickerPrice() {
 document.addEventListener('DOMContentLoaded', () => {
     setSumTickerPrice();
 
-    document.querySelectorAll('.ticket-type-span-text').forEach((item) => {
-        item.onclick = function() { selectBookingTicketTypeAndHideParent(item) };
+    document.querySelectorAll('.ticket-type-span-text').forEach((item, index) => {
+        item.onclick = function() {
+            selectSomethingAndHideParent(item);
+            updateTicketType(index);
+        };
+    });
+
+    document.querySelectorAll('.time-span-text').forEach((item) => {
+        item.onclick = function() {
+            selectSomethingAndHideParent(item);
+            updateTicketTime(item);
+        };
     });
 });
 
@@ -45,23 +55,37 @@ function toggleBookingTicketSelector(element) {
     element.nextElementSibling.classList.toggle('active');
 }
 
-function selectBookingTicketTypeAndHideParent(item) {
-    selectBookingTicketType(item);
+function setSomeValue(item) {
+    const container = item.closest('.booking-selector-container');
+    const selectedValue = container.querySelector('.ticket-data-span');
+    selectedValue.textContent = item.textContent;
+}
 
+function hideSomeParent(item) {
     const container = item.closest('.booking-selector-container');
     const elementDiv = container.querySelector('.booking-item');
     toggleBookingTicketSelector(elementDiv);
 }
 
-function selectBookingTicketType(item) {
-    ticketTypeInBookingSection = item.getAttribute('data-value');
-
-    const container = item.closest('.booking-selector-container');
-    const selectedValue = container.querySelector('.ticket-data-span');
-    selectedValue.textContent = item.textContent;
-
+function updateTicketType(index) {
+    ticketTypeInBookingSection = index;
     setOverviewTicketPricesText();
     setOverviewTicketSum();
+}
+
+function selectSomethingAndHideParent(item) {
+    setSomeValue(item);
+    hideSomeParent(item);
+}
+
+function selectBookingTicketType(item, index) {
+    setSomeValue(item);
+    updateTicketType(index);
+}
+
+function updateTicketTime(item) {
+    const timeSpan = document.querySelector('.time-description');
+    timeSpan.textContent = item.textContent;
 }
 
 function setOverviewTicketPricesText() {
@@ -104,7 +128,7 @@ function setTicketsDataInBookingForm() {
     ticketTypeInBookingSection = ticketType;
 
     const typeOptions = document.querySelectorAll('.ticket-type-span-text');
-    selectBookingTicketType(typeOptions[ticketType]);
+    selectBookingTicketType(typeOptions[ticketType], ticketType);
 }
 
 function clickBuyTicketsButton() {

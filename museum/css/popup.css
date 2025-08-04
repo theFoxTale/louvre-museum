@@ -1,6 +1,7 @@
 .popup-is-open {
     overflow: hidden;
 }
+
 .pop-up {
     width: 100%;
     height: 100%;
@@ -12,6 +13,12 @@
     justify-content: center;
     align-items: center;
     z-index: 30;
+    visibility: hidden;
+    transition: visibility 1s;
+}
+
+.pop-up.active {
+    visibility: visible;
 }
 
 .pop-up-content {
@@ -23,6 +30,16 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    transform: translateX(-140%);
+    transition: transform 1s;
+}
+
+.pop-up.active .pop-up-content {
+    transform: translateX(0);
+}
+
+.pop-up:not(.active) .pop-up-content {
+    transform: translateX(-140%);
 }
 
 .pop-up-close-button {
@@ -120,12 +137,18 @@
     margin-top: -1px;
 }
 
+.booking-span.limited-span {
+    max-height: 350px;
+    overflow-y: scroll;
+}
+
 .booking-span.active {
     display: flex;
 }
 
-.ticket-type-span-text {
+.span-text {
     height: 45px;
+    min-height: 45px;
     font-family: Roboto, sans-serif;
     font-weight: 300;
     font-size: 18px;
@@ -134,7 +157,7 @@
     padding-left: 43px;
 }
 
-.ticket-type-span-text:hover {
+.span-text:hover {
     background-color: #E7E7E7;
 }
 
