@@ -102,6 +102,42 @@
     padding: 0 15px;
 }
 
+.booking-selector-container {
+    position: relative;
+}
+
+.booking-span {
+    width: 100%;
+    border: 1px solid var(--background-black);
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    z-index: 40;
+    background-color: var(--background-white);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    top: 100%;
+    left: 0;
+    margin-top: -1px;
+}
+
+.booking-span.active {
+    display: flex;
+}
+
+.ticket-type-span-text {
+    height: 45px;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    padding-left: 43px;
+}
+
+.ticket-type-span-text:hover {
+    background-color: #E7E7E7;
+}
+
 .booking-item.booking-ticket-type {
     height: 135px;
     flex-direction: column;
