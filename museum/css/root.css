@@ -333,7 +333,7 @@ h2 {
 
     .header-navigation {
         position: absolute;
-        left: -420px;
+        left: -820px;
         top: 165px;
         z-index: 5;
     }
@@ -393,7 +393,6 @@ h2 {
     }
 
     .header-navigation {
-        left: -820px;
         top: 145px;
     }
 
