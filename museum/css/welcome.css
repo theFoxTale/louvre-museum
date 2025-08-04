@@ -7,6 +7,7 @@
 .welcome-text {
     position: absolute;
     top: 150px;
+    z-index: 2;
     transition: opacity 0.7s ease;
 }
 
@@ -256,10 +257,10 @@ h1 {
     .welcome-image-container {
         width: 100%;
         height: 546px;
+        top: 215px;
     }
 
     .welcome-slider {
-        position: static;
         width: 100%;
         height: 95px;
         gap: 45px;
@@ -296,10 +297,10 @@ h1 {
 
     .welcome-image-container {
         height: 285px;
+        top: 180px;
     }
 
     .welcome-slider {
-        position: static;
         width: 100%;
         height: 80px;
         gap: 25px;
