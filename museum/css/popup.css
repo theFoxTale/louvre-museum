@@ -99,7 +99,7 @@
     padding: 0 15px;
 }
 
-.booking-item.ticket-type {
+.booking-item.booking-ticket-type {
     height: 135px;
     flex-direction: column;
     align-items: start;
