@@ -17,6 +17,7 @@
     position: relative;
     flex-basis: 720px;
     align-self: end;
+    overflow: hidden;
 }
 
 .first-explore-row {
@@ -53,9 +54,15 @@
 .picture-slider {
     cursor: e-resize;
     position: absolute;
-    left: 420px;
-    top: 0;
     z-index: 10;
+    top: 0;
+    left: 420px;
+
+    height: 100%;
+    width: 39px;
+    background-image: url("../assets/img/explore/slider.png");
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .medium-explore-text {}
