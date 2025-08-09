@@ -41,23 +41,6 @@ function addExploreListeners() {
     window.addEventListener('resize', () => needUpdateBoundaries = true);
 }
 
-function updateShiftBoundaries() {
-    const containerRect = exploreImageContainer.getBoundingClientRect();
-    const sliderRect = exploreSlider.getBoundingClientRect();
-
-    const sliderHalfWidth = 0.5*sliderRect.width;
-    const sliderLeft = sliderRect.left + sliderShift;
-    const sliderRight = sliderRect.right + sliderShift;
-    maxShiftToLeft = containerRect.left - sliderLeft - sliderHalfWidth;
-    maxShiftToRight = containerRect.right - sliderRight + sliderHalfWidth;
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    getExploreSectionElements();
-    addExploreListeners();
-    updateShiftBoundaries();
-});
-
 function exploreSliderClickStart(event) {
     sliderIsMoving = true;
     sliderPositionX = event.clientX;
@@ -97,3 +80,20 @@ function exploreSliderMove(event) {
         updateExploreImageWidth(xDifference);
     }
 }
+
+function updateShiftBoundaries() {
+    const containerRect = exploreImageContainer.getBoundingClientRect();
+    const sliderRect = exploreSlider.getBoundingClientRect();
+
+    const sliderHalfWidth = 0.5*sliderRect.width;
+    const sliderLeft = sliderRect.left + sliderShift;
+    const sliderRight = sliderRect.right + sliderShift;
+    maxShiftToLeft = containerRect.left - sliderLeft - sliderHalfWidth;
+    maxShiftToRight = containerRect.right - sliderRight + sliderHalfWidth;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    getExploreSectionElements();
+    addExploreListeners();
+    updateShiftBoundaries();
+});

@@ -1,9 +1,13 @@
+let isAdaptiveMenuOpen = false;
+
 document.addEventListener('DOMContentLoaded', () => {
+    const menuIcon = document.querySelector('.menu-icon');
+    const menu = document.querySelector('.header-navigation');
+
+    menuIcon.addEventListener('click', toggleAdaptiveMenu);
+
     document.addEventListener('click', (event) => {
         if (!isAdaptiveMenuOpen) return;
-
-        const menuIcon = document.querySelector('.menu-icon');
-        const menu = document.querySelector('.header-navigation');
 
         const clickedInsideMenu = menu?.contains(event.target) ?? false;
         const clickedOnIcon = menuIcon?.contains(event.target) ?? false;
@@ -32,7 +36,6 @@ function clickSlider(slider) {
     slider.style.background = `linear-gradient(to right, var(--dark-red) 0%, var(--dark-red) ${value}%, var(--slider-grey) ${value}%, var(--slider-grey) 100%)`;
 }
 
-let isAdaptiveMenuOpen = false;
 function toggleAdaptiveMenu() {
     isAdaptiveMenuOpen = !isAdaptiveMenuOpen;
 
