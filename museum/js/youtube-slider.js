@@ -49,23 +49,6 @@ function prepareItemsCollection() {
     prepareVideoElements();
 }
 
-function appendYouTubeLinksToElements() {
-    window.onYouTubeIframeAPIReady = function() {
-        videoElementsList.map((_, index) => createPlayer(index));
-    };
-}
-
-function createPlayer(id) {
-    return new YT.Player(videoElementID + id, {
-        videoId: videoElementsList[id],
-        events: {
-            'onStateChange': onPlayerStateChange
-        },
-    });
-}
-
-function onPlayerStateChange(event) {}
-
 function getVideoWidth() {
     const videoElements = document.querySelectorAll('.mini-video');
     videoWidth = videoElements[2].offsetLeft - videoElements[1].offsetLeft;
@@ -119,7 +102,6 @@ function setActiveVideoDot(dotIndex) {
 document.addEventListener('DOMContentLoaded', () => {
     getVideoCarouselElements();
     prepareItemsCollection();
-    appendYouTubeLinksToElements();
 
     document.querySelector('.video-arrow.to-left').addEventListener('click', () => {
         if (isVideoSwipeEnabled) {
