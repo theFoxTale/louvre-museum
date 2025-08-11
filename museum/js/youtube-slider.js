@@ -11,36 +11,34 @@ let needUpdateWidth = true;
 
 function getVideoCarouselElements() {
     videoContainer = document.querySelector('.mini-video-carousel');
+    dotsList = document.querySelectorAll('.video-dot');
 }
 
 function prepareVideoList() {
-    const videoLinksList = [
-        'zp1BXPX8jcU',
-        'Vi5D6FKhRmo',
-        'NOhDysLnTvY',
-        'aWmJ5DgyWPI',
-        '2OR0OCr6uRE'
+    const dotsIndexList = Array.from({ length: dotsList.length }, ( _, i) => i);
+    videoElementsList = [
+        dotsIndexList[dotsIndexList.length - 1],
+        ...dotsIndexList,
+        dotsIndexList[0]
     ];
-
-    if (videoLinksList.length > 0) {
-        videoElementsList = [
-            videoLinksList[videoLinksList.length - 1],
-            ...videoLinksList,
-            videoLinksList[0]
-        ];
-    }
 }
 
 function prepareVideoElements() {
     const videoElement = document.querySelector('.mini-video');
-    videoElementsList.map((link, index) => {
-        let newNode = videoElement;
+
+    videoElementsList.map((linkIndex, index) => {
         if (index > 0) {
-            newNode = videoElement.cloneNode();
+            let newNode = videoElement.cloneNode(true);
             newNode.id = videoElementID + index;
+            newNode.classList.add('player-video-' + linkIndex);
+            videoContainer.appendChild(newNode);
         }
-        newNode.src = 'https://www.youtube-nocookie.com/embed/' + link + '?origin=' + window.location.origin;
-        videoContainer.appendChild(newNode);
+    });
+
+    videoElement.classList.add('player-video-' + videoElementsList[0]);
+
+    document.querySelectorAll('.mini-video-button').forEach((item, index) => {
+        item.addEventListener('click', () => miniPlayerClick(item.parentElement.id, index));
     });
 }
 
@@ -55,7 +53,7 @@ function getVideoWidth() {
     needUpdateWidth = false;
 }
 
-let getDotIndexFromStepIndex = () => (currentVideoStep < 0) ? (dotsList.length - 1) : currentVideoStep;
+let getDotIndexFromStepIndex = () => (currentVideoStep < 0) ? (dotsList.length + currentVideoStep) : currentVideoStep;
 
 let getNewVideoLeftOffset = () => -1 * (currentVideoStep + 1) * videoWidth + 'px';
 
@@ -65,6 +63,8 @@ function moveCarouselVideo() {
 
     const dotIndex = getDotIndexFromStepIndex();
     setActiveVideoDot(dotIndex);
+
+    showNewMainVideo();
 }
 
 function flipCarouselOnEdges() {
@@ -83,11 +83,13 @@ function flipCarouselOnEdges() {
 }
 
 function moveVideoToLeft() {
+    hideOldMainVideo();
     currentVideoStep--;
     moveCarouselVideo();
 }
 
 function moveVideoToRight() {
+    hideOldMainVideo();
     currentVideoStep++;
     moveCarouselVideo();
 }
@@ -97,6 +99,14 @@ function setActiveVideoDot(dotIndex) {
         dot.classList.remove('video-active');
     }
     dotsList[dotIndex].classList.add('video-active');
+}
+
+function hideOldMainVideo() {
+    document.getElementById('youtube-main-player').classList.remove('player-video-' + getDotIndexFromStepIndex());
+}
+
+function showNewMainVideo() {
+    document.getElementById('youtube-main-player').classList.add('player-video-' + getDotIndexFromStepIndex());
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -123,10 +133,10 @@ document.addEventListener('DOMContentLoaded', () => {
         isVideoSwipeEnabled = true;
     });
 
-    dotsList = document.querySelectorAll('.video-dot');
     dotsList.forEach((item, index) => {
         item.addEventListener('click', () => {
             if (isVideoSwipeEnabled) {
+                hideOldMainVideo();
                 currentVideoStep = index;
                 moveCarouselVideo();
             }
