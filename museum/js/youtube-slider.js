@@ -37,8 +37,8 @@ function prepareVideoElements() {
 
     videoElement.classList.add('player-video-' + videoElementsList[0]);
 
-    document.querySelectorAll('.mini-video-button').forEach((item, index) => {
-        item.addEventListener('click', () => miniPlayerClick(item.parentElement.id, index));
+    document.querySelectorAll('.mini-video').forEach((item, index) => {
+        item.addEventListener('click', () => miniPlayerClick(item.id, index));
     });
 }
 
@@ -102,6 +102,7 @@ function setActiveVideoDot(dotIndex) {
 }
 
 function hideOldMainVideo() {
+    stopPlayAnyVideo();
     document.getElementById('youtube-main-player').classList.remove('player-video-' + getDotIndexFromStepIndex());
 }
 
