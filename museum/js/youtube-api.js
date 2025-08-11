@@ -1,5 +1,4 @@
 let miniYouTubePlayer;
-let activeMiniPlayerID;
 let mainYouTubePlayer;
 
 const videoLinksList = [
@@ -46,8 +45,6 @@ function miniPlayerClick(playerID, playerIndex) {
         miniYouTubePlayer = null;
     }
 
-    activeMiniPlayerID = playerIndex;
-
     miniYouTubePlayer = new YT.Player(playerID, {
         videoId: videoLinksList[ videoElementsList[playerIndex] ],
         playerVars: {
@@ -63,4 +60,9 @@ function miniPlayerClick(playerID, playerIndex) {
 
 function onMiniPlayerReady(event) {
     event.target.playVideo();
+}
+
+function stopPlayAnyVideo() {
+    if (miniYouTubePlayer) miniYouTubePlayer.stopVideo();
+    if (mainYouTubePlayer) mainYouTubePlayer.stopVideo();
 }
