@@ -144,7 +144,7 @@
                 </ul>
             </nav>
 
-            <div class="menu-icon" onclick="toggleAdaptiveMenu();">
+            <div class="menu-icon">
                 <div class="menu-icon-span"></div>
                 <div class="menu-icon-span"></div>
                 <div class="menu-icon-span"></div>
@@ -262,7 +262,7 @@
                     <div class="picture-before">
                         <img alt="picture before" src="assets/img/explore/before.jpg" class="explore-picture-container">
                     </div>
-                    <img alt="slider image" src="assets/img/explore/slider.png" class="picture-slider">
+                    <div class="picture-slider"></div>
                     <div class="picture-after">
                         <img alt="picture after" src="assets/img/explore/after.jpg" class="explore-picture-container">
                     </div>
@@ -332,43 +332,31 @@
                 </div>
 
                 <div class="mini-video-container">
-                    <iframe class="mini-video"
-                            src="https://www.youtube-nocookie.com/embed/aWmJ5DgyWPI?si=d_nSbuQ63l5IZkt3"
-                            title="YouTube video player"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen>
-                    </iframe>
-
-                    <iframe class="mini-video"
-                            src="https://www.youtube-nocookie.com/embed/Vi5D6FKhRmo?si=K8U_lqEDcSzF5Q2g"
-                            title="YouTube video player"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen>
-                    </iframe>
-
-                    <iframe class="mini-video third-video"
-                            src="https://www.youtube-nocookie.com/embed/NOhDysLnTvY?si=vy1CzDK3Zrq4szz2"
-                            title="YouTube video player"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen>
-                    </iframe>
+                    <div class="mini-video-carousel carousel-with-animation">
+                        <iframe id="youtube-video-0"
+                                class="mini-video"
+                                loading="lazy"
+                                src=""
+                                title="YouTube video player"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen>
+                        </iframe>
+                    </div>
                 </div>
 
                 <div class="flex-centered mini-video-controls">
-                    <div class="video-arrow">
+                    <div class="video-arrow to-left">
                         <svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M5.4777 0.219168C5.87773 0.564178 5.94259 1.19347 5.62256 1.62473L2.37578 6.00004L5.62256 10.3753C5.94259 10.8066 5.87773 11.4359 5.4777 11.7809C5.07766 12.1259 4.49394 12.056 4.17391 11.6247L0 6.00004L4.17391 0.375342C4.49394 -0.0559202 5.07766 -0.125842 5.4777 0.219168ZM9.65184 0.219168C10.0519 0.564178 10.1167 1.19347 9.7967 1.62473L6.54992 6.00004L9.7967 10.3753C10.1167 10.8066 10.0519 11.4359 9.65184 11.7809C9.2518 12.1259 8.66808 12.056 8.34805 11.6247L4.17414 6.00004L8.34805 0.375342C8.66808 -0.0559202 9.2518 -0.125842 9.65184 0.219168Z" />
                         </svg>
                     </div>
-                    <div class="video-dot video-unvisited"></div>
                     <div class="video-dot"></div>
                     <div class="video-dot"></div>
                     <div class="video-dot"></div>
                     <div class="video-dot"></div>
-                    <div class="video-arrow">
+                    <div class="video-dot"></div>
+                    <div class="video-arrow to-right">
                         <svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M0.348163 0.219168C0.748196 -0.125842 1.33192 -0.0559202 1.65195 0.375342L5.82586 6.00004L1.65194 11.6247C1.33192 12.056 0.748195 12.1259 0.348162 11.7809C-0.0518709 11.4359 -0.116729 10.8066 0.203297 10.3753L3.45008 6.00004L0.203298 1.62473C-0.116728 1.19347 -0.05187 0.564177 0.348163 0.219168ZM4.5223 0.219168C4.92234 -0.125841 5.50606 -0.0559197 5.82609 0.375342L10 6.00004L5.82609 11.6247C5.50606 12.056 4.92234 12.1259 4.5223 11.7809C4.12227 11.4359 4.05741 10.8066 4.37744 10.3753L7.62422 6.00004L4.37744 1.62473C4.05741 1.19347 4.12227 0.564178 4.5223 0.219168Z" />
                         </svg>
@@ -465,17 +453,17 @@
                         <div class="ticket-type-section">
                             <p class="ticket-block-header type-header">Ticket Type</p>
                             <label class="radio-button-text">
-                                <input type="radio" checked="checked" name="ticket-type">
+                                <input type="radio" name="ticket-type" value="0" onclick="selectTicketType()" checked="checked">
                                 <span class="checkmark"></span>
                                 Permanent exhibition
                             </label>
                             <label class="radio-button-text">
-                                <input type="radio" name="ticket-type">
+                                <input type="radio" name="ticket-type" value="1" onclick="selectTicketType()">
                                 <span class="checkmark"></span>
                                 Temporary exhibition
                             </label>
                             <label class="radio-button-text">
-                                <input type="radio" name="ticket-type">
+                                <input type="radio" name="ticket-type" value="2" onclick="selectTicketType()">
                                 <span class="checkmark"></span>
                                 Combined Admission
                             </label>
@@ -484,26 +472,38 @@
                     <div class="ticket-count-section">
                         <p class="ticket-block-header amount-header">Amount</p>
 
-                        <p class="number-text number-text-bottom">Basic 18+</p>
+                        <label class="number-text number-text-bottom" for="basic_ticket_input">Basic 18+</label>
                         <div class="amount-block flex-centered">
-                            <button type="button" class="amount-button" onclick="this.nextElementSibling.stepDown()">–</button>
-                            <label>
-                                <input type="number" min="0" max="20" value="1" readonly class="number-input number-text">
-                            </label>
-                            <button type="button" class="amount-button"  onclick="this.previousElementSibling.stepUp()">+</button>
+                            <button type="button" class="amount-button" onclick="decreaseTicketsCount(this);">
+                                <svg width="16" height="3" viewBox="0 0 16 3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.6875 2.82812H0.03125V0.46875H15.6875V2.82812Z" />
+                                </svg>
+                            </button>
+                            <input id="basic_ticket_input" type="number" min="0" max="20" value="1" readonly class="number-input number-text">
+                            <button type="button" class="amount-button"  onclick="increaseTicketsCount(this);">
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.89062 6.79688H16.2344V9.53125H9.89062V16.7188H6.98438V9.53125H0.640625V6.79688H6.98438V0.15625H9.89062V6.79688Z" />
+                                </svg>
+                            </button>
                         </div>
 
-                        <p class="number-text number-text-bottom">Senior 65+</p>
+                        <label class="number-text number-text-bottom" for="senior_ticket_input">Senior 65+</label>
                         <div class="amount-block flex-centered">
-                            <button type="button" class="amount-button" onclick="this.nextElementSibling.stepDown()">–</button>
-                            <label>
-                                <input type="number" min="0" max="20" value="1" readonly class="number-input number-text">
-                            </label>
-                            <button type="button" class="amount-button"  onclick="this.previousElementSibling.stepUp()">+</button>
+                            <button type="button" class="amount-button" onclick="decreaseTicketsCount(this)">
+                                <svg width="16" height="3" viewBox="0 0 16 3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.6875 2.82812H0.03125V0.46875H15.6875V2.82812Z" />
+                                </svg>
+                            </button>
+                            <input id="senior_ticket_input" type="number" min="0" max="20" value="1" readonly class="number-input number-text">
+                            <button type="button" class="amount-button"  onclick="increaseTicketsCount(this)">
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.89062 6.79688H16.2344V9.53125H9.89062V16.7188H6.98438V9.53125H0.640625V6.79688H6.98438V0.15625H9.89062V6.79688Z" />
+                                </svg>
+                            </button>
                         </div>
 
-                        <p class="total-text">Total €220</p>
-                        <button type="button" class="buy-button" onclick="clickBuyTicket();">Buy Now</button>
+                        <p class="total-text">Total €<span class="sum-ticket-price">220</span></p>
+                        <button type="button" class="buy-button" onclick="clickBuyTicketsButton();">Buy Now</button>
                     </div>
                 </div>
             </div>
@@ -526,9 +526,9 @@
             </div>
         </section>
 
-        <div class="pop-up invisible-element">
+        <div class="pop-up">
             <div class="pop-up-content">
-                <button type="button" class="pop-up-close-button" onclick="closePopUp();">
+                <button type="button" class="pop-up-close-button" onclick="togglePopUp();">
                     <svg width="100%" height="100%" viewBox="0 0 25 25" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <rect width="33.2612" height="2.07882" transform="matrix(0.7068 0.707413 -0.7068 0.707413 1.47046 0)" />
                         <rect width="33.2612" height="2.07883" transform="matrix(0.707413 -0.706801 0.707413 0.706801 0 23.5093)" />
@@ -555,15 +555,41 @@
                                     <path d="M8.49027 2.00537e-06C6.80951 0.00192619 5.16704 0.50211 3.77048 1.43731C2.37392 2.37251 1.28597 3.70075 0.644144 5.25414C0.00231959 6.80754 -0.164562 8.51633 0.164589 10.1646C0.493741 11.8128 1.30415 13.3264 2.49338 14.5142C3.68261 15.7019 5.19728 16.5104 6.84591 16.8375C8.49455 17.1646 10.2031 16.9955 11.7557 16.3517C13.3083 15.7079 14.6352 14.6183 15.5686 13.2206C16.5021 11.8229 17.0002 10.1798 17 8.49902C16.9994 7.38219 16.7787 6.27641 16.3507 5.24485C15.9227 4.21329 15.2957 3.27615 14.5055 2.48694C13.7153 1.69772 12.7773 1.0719 11.7452 0.645188C10.7131 0.218476 9.6071 -0.000764966 8.49027 2.00537e-06ZM8.80653 11.7161L4.1201 6.78345H13.493L8.80653 11.7161Z" />
                                 </svg>
                             </div>
-                            <div class="booking-item">
-                                <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M7.49142 1.76945e-06C6.00839 0.00169958 4.55915 0.443039 3.32689 1.26822C2.09464 2.0934 1.13468 3.26537 0.568362 4.63602C0.00204669 6.00666 -0.145202 7.51442 0.145226 8.96874C0.435653 10.4231 1.15072 11.7586 2.20004 12.8066C3.24936 13.8546 4.58582 14.568 6.0405 14.8566C7.49518 15.1452 9.00276 14.9961 10.3727 14.428C11.7426 13.86 12.9134 12.8985 13.737 11.6652C14.5607 10.4319 15.0002 8.98218 15 7.49915C14.9994 6.51371 14.8048 5.53802 14.4271 4.62782C14.0495 3.71762 13.4962 2.89073 12.799 2.19436C12.1017 1.49799 11.2741 0.945796 10.3634 0.569285C9.45277 0.192773 8.47685 -0.000674971 7.49142 1.76945e-06ZM10.4004 10.0192C10.3273 10.1214 10.2166 10.1904 10.0926 10.211C9.9686 10.2316 9.84152 10.2022 9.73927 10.1291L6.95478 8.14311V3.93588C6.9492 3.87048 6.95726 3.80465 6.97846 3.74253C6.99965 3.68041 7.03353 3.62336 7.07792 3.57501C7.12232 3.52667 7.17627 3.48806 7.23636 3.46166C7.29645 3.43526 7.36139 3.42162 7.42702 3.42162C7.49266 3.42162 7.55758 3.43526 7.61768 3.46166C7.67777 3.48806 7.73172 3.52667 7.77611 3.57501C7.82051 3.62336 7.85438 3.68041 7.87558 3.74253C7.89677 3.80465 7.90483 3.87048 7.89925 3.93588V7.65713L10.2862 9.36063C10.3372 9.39608 10.3808 9.44124 10.4143 9.49353C10.4479 9.54581 10.4709 9.60421 10.4819 9.66537C10.4929 9.72652 10.4917 9.78923 10.4785 9.84994C10.4652 9.91065 10.4402 9.96816 10.4047 10.0192H10.4004Z" />
-                                </svg>
-                                <span class="ticket-name-span">Time</span>
-                                <span class="ticket-data-span"></span>
-                                <svg width="17" height="17" viewBox="0 0 17 17" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M8.49027 2.00537e-06C6.80951 0.00192619 5.16704 0.50211 3.77048 1.43731C2.37392 2.37251 1.28597 3.70075 0.644144 5.25414C0.00231959 6.80754 -0.164562 8.51633 0.164589 10.1646C0.493741 11.8128 1.30415 13.3264 2.49338 14.5142C3.68261 15.7019 5.19728 16.5104 6.84591 16.8375C8.49455 17.1646 10.2031 16.9955 11.7557 16.3517C13.3083 15.7079 14.6352 14.6183 15.5686 13.2206C16.5021 11.8229 17.0002 10.1798 17 8.49902C16.9994 7.38219 16.7787 6.27641 16.3507 5.24485C15.9227 4.21329 15.2957 3.27615 14.5055 2.48694C13.7153 1.69772 12.7773 1.0719 11.7452 0.645188C10.7131 0.218476 9.6071 -0.000764966 8.49027 2.00537e-06ZM8.80653 11.7161L4.1201 6.78345H13.493L8.80653 11.7161Z" />
-                                </svg>
+                            <div class="booking-selector-container">
+                                <div class="booking-item" onclick="toggleBookingTicketSelector(this)">
+                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7.49142 1.76945e-06C6.00839 0.00169958 4.55915 0.443039 3.32689 1.26822C2.09464 2.0934 1.13468 3.26537 0.568362 4.63602C0.00204669 6.00666 -0.145202 7.51442 0.145226 8.96874C0.435653 10.4231 1.15072 11.7586 2.20004 12.8066C3.24936 13.8546 4.58582 14.568 6.0405 14.8566C7.49518 15.1452 9.00276 14.9961 10.3727 14.428C11.7426 13.86 12.9134 12.8985 13.737 11.6652C14.5607 10.4319 15.0002 8.98218 15 7.49915C14.9994 6.51371 14.8048 5.53802 14.4271 4.62782C14.0495 3.71762 13.4962 2.89073 12.799 2.19436C12.1017 1.49799 11.2741 0.945796 10.3634 0.569285C9.45277 0.192773 8.47685 -0.000674971 7.49142 1.76945e-06ZM10.4004 10.0192C10.3273 10.1214 10.2166 10.1904 10.0926 10.211C9.9686 10.2316 9.84152 10.2022 9.73927 10.1291L6.95478 8.14311V3.93588C6.9492 3.87048 6.95726 3.80465 6.97846 3.74253C6.99965 3.68041 7.03353 3.62336 7.07792 3.57501C7.12232 3.52667 7.17627 3.48806 7.23636 3.46166C7.29645 3.43526 7.36139 3.42162 7.42702 3.42162C7.49266 3.42162 7.55758 3.43526 7.61768 3.46166C7.67777 3.48806 7.73172 3.52667 7.77611 3.57501C7.82051 3.62336 7.85438 3.68041 7.87558 3.74253C7.89677 3.80465 7.90483 3.87048 7.89925 3.93588V7.65713L10.2862 9.36063C10.3372 9.39608 10.3808 9.44124 10.4143 9.49353C10.4479 9.54581 10.4709 9.60421 10.4819 9.66537C10.4929 9.72652 10.4917 9.78923 10.4785 9.84994C10.4652 9.91065 10.4402 9.96816 10.4047 10.0192H10.4004Z" />
+                                    </svg>
+                                    <span class="ticket-name-span">Time</span>
+                                    <span class="ticket-data-span"></span>
+                                    <svg width="17" height="17" viewBox="0 0 17 17" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="up-arrow">
+                                        <path d="M8.49027 2.00537e-06C6.80951 0.00192619 5.16704 0.50211 3.77048 1.43731C2.37392 2.37251 1.28597 3.70075 0.644144 5.25414C0.00231959 6.80754 -0.164562 8.51633 0.164589 10.1646C0.493741 11.8128 1.30415 13.3264 2.49338 14.5142C3.68261 15.7019 5.19728 16.5104 6.84591 16.8375C8.49455 17.1646 10.2031 16.9955 11.7557 16.3517C13.3083 15.7079 14.6352 14.6183 15.5686 13.2206C16.5021 11.8229 17.0002 10.1798 17 8.49902C16.9994 7.38219 16.7787 6.27641 16.3507 5.24485C15.9227 4.21329 15.2957 3.27615 14.5055 2.48694C13.7153 1.69772 12.7773 1.0719 11.7452 0.645188C10.7131 0.218476 9.6071 -0.000764966 8.49027 2.00537e-06ZM8.80653 11.7161L4.1201 6.78345H13.493L8.80653 11.7161Z" />
+                                    </svg>
+                                    <svg width="17" height="17" viewBox="0 0 17 17" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="down-arrow hidden-element">
+                                        <path d="M8.50973 17C10.1905 16.9981 11.833 16.4979 13.2295 15.5627C14.6261 14.6275 15.714 13.2992 16.3559 11.7458C16.9977 10.1924 17.1646 8.48366 16.8354 6.83543C16.5063 5.18721 15.6959 3.67354 14.5066 2.48581C13.3174 1.29807 11.8027 0.489574 10.1541 0.162498C8.50545 -0.164578 6.79685 0.00446612 5.24427 0.648246C3.69168 1.29202 2.36481 2.38166 1.43136 3.77939C0.497914 5.17712 -0.000189845 6.82019 7.43009e-07 8.50096C0.000639607 9.61779 0.221261 10.7236 0.649271 11.7551C1.07728 12.7867 1.7043 13.7238 2.49451 14.5131C3.28473 15.3023 4.22266 15.9281 5.25476 16.3548C6.28686 16.7815 7.3929 17.0008 8.50973 17ZM8.19347 5.28391L12.8799 10.2165L3.50703 10.2165L8.19347 5.28391Z" />
+                                    </svg>
+                                </div>
+                                <div class="booking-span limited-span">
+                                    <div class="span-text time-span-text">09:00</div>
+                                    <div class="span-text time-span-text">09:30</div>
+                                    <div class="span-text time-span-text">10:00</div>
+                                    <div class="span-text time-span-text">10:30</div>
+                                    <div class="span-text time-span-text">11:00</div>
+                                    <div class="span-text time-span-text">11:30</div>
+                                    <div class="span-text time-span-text">12:00</div>
+                                    <div class="span-text time-span-text">12:30</div>
+                                    <div class="span-text time-span-text">13:00</div>
+                                    <div class="span-text time-span-text">13:30</div>
+                                    <div class="span-text time-span-text">14:00</div>
+                                    <div class="span-text time-span-text">14:30</div>
+                                    <div class="span-text time-span-text">15:00</div>
+                                    <div class="span-text time-span-text">15:30</div>
+                                    <div class="span-text time-span-text">16:00</div>
+                                    <div class="span-text time-span-text">16:30</div>
+                                    <div class="span-text time-span-text">17:00</div>
+                                    <div class="span-text time-span-text">17:30</div>
+                                    <div class="span-text time-span-text">18:00</div>
+                                </div>
                             </div>
                         </div>
                         <div class="booking-item">
@@ -584,28 +610,36 @@
                             </svg>
                             <span class="ticket-name-span">Phone</span>
                         </div>
-                        <div class="booking-item">
-                            <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.33333 5.41667H12.5V3.75H8.33333V5.41667ZM8.33333 11.25H12.5V9.58333H8.33333V11.25ZM13.3333 15H1.66667C0.75 15 0 14.25 0 13.3333V1.66667C0 0.75 0.75 0 1.66667 0H13.3333C14.25 0 15 0.75 15 1.66667V13.3333C15 14.25 14.25 15 13.3333 15ZM2.5 6.66667H6.66667V2.5H2.5V6.66667ZM3.33333 3.33333H5.83333V5.83333H3.33333V3.33333ZM2.5 12.5H6.66667V8.33333H2.5V12.5ZM3.33333 9.16667H5.83333V11.6667H3.33333V9.16667Z" />
-                            </svg>
-                            <span class="ticket-name-span">Ticket Type</span>
-                            <span class="ticket-data-span"></span>
-                            <svg width="17" height="17" viewBox="0 0 17 17" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8.49027 2.00537e-06C6.80951 0.00192619 5.16704 0.50211 3.77048 1.43731C2.37392 2.37251 1.28597 3.70075 0.644144 5.25414C0.00231959 6.80754 -0.164562 8.51633 0.164589 10.1646C0.493741 11.8128 1.30415 13.3264 2.49338 14.5142C3.68261 15.7019 5.19728 16.5104 6.84591 16.8375C8.49455 17.1646 10.2031 16.9955 11.7557 16.3517C13.3083 15.7079 14.6352 14.6183 15.5686 13.2206C16.5021 11.8229 17.0002 10.1798 17 8.49902C16.9994 7.38219 16.7787 6.27641 16.3507 5.24485C15.9227 4.21329 15.2957 3.27615 14.5055 2.48694C13.7153 1.69772 12.7773 1.0719 11.7452 0.645188C10.7131 0.218476 9.6071 -0.000764966 8.49027 2.00537e-06ZM8.80653 11.7161L4.1201 6.78345H13.493L8.80653 11.7161Z" />
-                            </svg>
+                        <div class="booking-selector-container">
+                            <div class="booking-item" onclick="toggleBookingTicketSelector(this)">
+                                <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.33333 5.41667H12.5V3.75H8.33333V5.41667ZM8.33333 11.25H12.5V9.58333H8.33333V11.25ZM13.3333 15H1.66667C0.75 15 0 14.25 0 13.3333V1.66667C0 0.75 0.75 0 1.66667 0H13.3333C14.25 0 15 0.75 15 1.66667V13.3333C15 14.25 14.25 15 13.3333 15ZM2.5 6.66667H6.66667V2.5H2.5V6.66667ZM3.33333 3.33333H5.83333V5.83333H3.33333V3.33333ZM2.5 12.5H6.66667V8.33333H2.5V12.5ZM3.33333 9.16667H5.83333V11.6667H3.33333V9.16667Z" />
+                                </svg>
+                                <span class="ticket-name-span">Ticket Type</span>
+                                <span class="ticket-data-span"></span>
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="up-arrow">
+                                    <path d="M8.49027 2.00537e-06C6.80951 0.00192619 5.16704 0.50211 3.77048 1.43731C2.37392 2.37251 1.28597 3.70075 0.644144 5.25414C0.00231959 6.80754 -0.164562 8.51633 0.164589 10.1646C0.493741 11.8128 1.30415 13.3264 2.49338 14.5142C3.68261 15.7019 5.19728 16.5104 6.84591 16.8375C8.49455 17.1646 10.2031 16.9955 11.7557 16.3517C13.3083 15.7079 14.6352 14.6183 15.5686 13.2206C16.5021 11.8229 17.0002 10.1798 17 8.49902C16.9994 7.38219 16.7787 6.27641 16.3507 5.24485C15.9227 4.21329 15.2957 3.27615 14.5055 2.48694C13.7153 1.69772 12.7773 1.0719 11.7452 0.645188C10.7131 0.218476 9.6071 -0.000764966 8.49027 2.00537e-06ZM8.80653 11.7161L4.1201 6.78345H13.493L8.80653 11.7161Z" />
+                                </svg>
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="down-arrow hidden-element">
+                                    <path d="M8.50973 17C10.1905 16.9981 11.833 16.4979 13.2295 15.5627C14.6261 14.6275 15.714 13.2992 16.3559 11.7458C16.9977 10.1924 17.1646 8.48366 16.8354 6.83543C16.5063 5.18721 15.6959 3.67354 14.5066 2.48581C13.3174 1.29807 11.8027 0.489574 10.1541 0.162498C8.50545 -0.164578 6.79685 0.00446612 5.24427 0.648246C3.69168 1.29202 2.36481 2.38166 1.43136 3.77939C0.497914 5.17712 -0.000189845 6.82019 7.43009e-07 8.50096C0.000639607 9.61779 0.221261 10.7236 0.649271 11.7551C1.07728 12.7867 1.7043 13.7238 2.49451 14.5131C3.28473 15.3023 4.22266 15.9281 5.25476 16.3548C6.28686 16.7815 7.3929 17.0008 8.50973 17ZM8.19347 5.28391L12.8799 10.2165L3.50703 10.2165L8.19347 5.28391Z" />
+                                </svg>
+                            </div>
+                            <div class="booking-span">
+                                <div class="span-text ticket-type-span-text" data-value="0">Permanent exhibition</div>
+                                <div class="span-text ticket-type-span-text" data-value="1">Temporary exhibition</div>
+                                <div class="span-text ticket-type-span-text" data-value="2">Combined Admission</div>
+                            </div>
                         </div>
-                        <div class="booking-item ticket-type">
+                        <div class="booking-item booking-ticket-type">
                             <p class="entry-header">Entry ticket</p>
                             <div class="ticket-type-content">
-                                <span class="ticket-name-span">Basic 18+ (20 €)</span>
+                                <label class="ticket-name-span" for="basic_booking_ticket_input">Basic 18+ (20 €)</label>
                                 <div class="ticket-amount-block flex-centered">
-                                    <button type="button" class="ticket-amount-button" onclick="this.nextElementSibling.stepDown()">
+                                    <button type="button" class="ticket-amount-button" onclick="decreaseOverviewCount(this, 'basic')">
                                         <span class="ticket-span"></span>
                                     </button>
-                                    <label>
-                                        <input type="number" min="0" max="20" value="1" readonly class="number-input ticket-number-text">
-                                    </label>
-                                    <button type="button" class="ticket-amount-button"  onclick="this.previousElementSibling.stepUp()">
+                                    <input id="basic_booking_ticket_input" type="number" min="0" max="20" value="1" readonly class="number-input ticket-number-text">
+                                    <button type="button" class="ticket-amount-button"  onclick="increaseOverviewCount(this, 'basic')">
                                         <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M0 4H10V6H0V4Z"/>
                                             <path d="M4 10L4 8.74224e-08L6 0L6 10H4Z"/>
@@ -614,15 +648,13 @@
                                 </div>
                             </div>
                             <div class="ticket-type-content">
-                                <span class="ticket-name-span">Senior 65+ (10 €)</span>
+                                <label class="ticket-name-span" for="senior_booking_ticket_input">Senior 65+ (10 €)</label>
                                 <div class="ticket-amount-block flex-centered">
-                                    <button type="button" class="ticket-amount-button" onclick="this.nextElementSibling.stepDown()">
+                                    <button type="button" class="ticket-amount-button" onclick="decreaseOverviewCount(this, 'senior')">
                                         <span class="ticket-span"></span>
                                     </button>
-                                    <label>
-                                        <input type="number" min="0" max="20" value="1" readonly class="number-input ticket-number-text">
-                                    </label>
-                                    <button type="button" class="ticket-amount-button"  onclick="this.previousElementSibling.stepUp()">
+                                    <input id="senior_booking_ticket_input" type="number" min="0" max="20" value="1" readonly class="number-input ticket-number-text">
+                                    <button type="button" class="ticket-amount-button"  onclick="increaseOverviewCount(this, 'senior')">
                                         <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M0 4H10V6H0V4Z"/>
                                             <path d="M4 10L4 8.74224e-08L6 0L6 10H4Z"/>
@@ -665,18 +697,18 @@
 
                     <div class="ticket-overview-price-content">
                         <div class="ticket-price-line">
-                            <div class="ticket-black-count">2</div>
-                            <span class="ticket-price-text">Basic (20 €)</span>
-                            <span class="ticket-sum-text">40 €</span>
+                            <div class="ticket-black-count basic-right-count">2</div>
+                            <span class="ticket-price-text">Basic (<span class="basic-overview-price">20</span> €)</span>
+                            <span class="ticket-sum-text"><span class="basic-overview-sum">40</span> €</span>
                         </div>
                         <div class="ticket-price-line">
-                            <div class="ticket-black-count">2</div>
-                            <span class="ticket-price-text">Senior (10 €)</span>
-                            <span class="ticket-sum-text">20 €</span>
+                            <div class="ticket-black-count senior-right-count">2</div>
+                            <span class="ticket-price-text">Senior (<span class="senior-overview-price">10</span> €)</span>
+                            <span class="ticket-sum-text"><span class="senior-overview-sum">20</span> €</span>
                         </div>
                         <div class="ticket-sum-line">
                             <span class="ticket-total-text">Total:</span>
-                            <span class="ticket-full-price-text">60 €</span>
+                            <span class="ticket-full-price-text"><span class="full-overview-span">60</span> €</span>
                         </div>
                     </div>
 
@@ -687,10 +719,10 @@
                                     <label class="ticket-card-main-text">Card number
                                         <input type="text" class="white-box-input card-number"/>
                                     </label>
-                                    <label class="ticket-card-main-text">Expiration date</label>
+                                    <label class="ticket-card-main-text" for="card_month">Expiration date</label>
                                     <div class="card-date-content">
                                         <div class="white-box-input number-input-container">
-                                            <input type="number" min="01" max="12" value="03" class="card-number-input ticket-card-main-text card-date"/>
+                                            <input id="card_month" type="number" min="01" max="12" value="03" class="card-number-input ticket-card-main-text card-date"/>
                                             <div class="arrows-container">
                                                 <button type="button" class="card-date-button card-up-button" onclick="this.nextElementSibling.stepDown()">
                                                     <svg width="6" height="4" viewBox="0 0 6 4" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -705,7 +737,7 @@
                                             </div>
                                         </div>
                                         <div class="white-box-input number-input-container">
-                                            <input type="number" min="1900" max="2025" value="2024" class="card-number-input ticket-card-main-text card-year"/>
+                                            <input id="card_year" type="number" min="1900" max="2025" value="2024" class="card-number-input ticket-card-main-text card-year"/>
                                             <div class="arrows-container">
                                                 <button type="button" class="card-date-button card-up-button" onclick="this.nextElementSibling.stepDown()">
                                                     <svg width="6" height="4" viewBox="0 0 6 4" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -825,6 +857,9 @@ of the card</pre>
     </footer>
 
     <script src="index.js" defer></script>
-    <script src="js/slider.js" defer></script>
+    <script src="js/welcome-slider.js" defer></script>
+    <script src="js/tickets.js" defer></script>
+    <script src="js/explore.js" defer></script>
+    <script src="js/youtube-slider.js" defer></script>
 </body>
 </html>

@@ -97,14 +97,16 @@
 .amount-button {
     width: 38px;
     height: 38px;
+    color: var(--text-dark);
     background-color: var(--background-white);
     border: 0;
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 32px;
-    text-align: center;
+    padding: 0;
     transition: color 1s;
     cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .amount-button:hover {
@@ -116,6 +118,7 @@
     text-align: center;
     appearance: none;
     -moz-appearance: textfield;
+    height: 100%;
 }
 
 .number-text {

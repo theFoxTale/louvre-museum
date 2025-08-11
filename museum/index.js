@@ -1,9 +1,13 @@
+let isAdaptiveMenuOpen = false;
+
 document.addEventListener('DOMContentLoaded', () => {
+    const menuIcon = document.querySelector('.menu-icon');
+    const menu = document.querySelector('.header-navigation');
+
+    menuIcon.addEventListener('click', toggleAdaptiveMenu);
+
     document.addEventListener('click', (event) => {
         if (!isAdaptiveMenuOpen) return;
-
-        const menuIcon = document.querySelector('.menu-icon');
-        const menu = document.querySelector('.header-navigation');
 
         const clickedInsideMenu = menu?.contains(event.target) ?? false;
         const clickedOnIcon = menuIcon?.contains(event.target) ?? false;
@@ -16,14 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const popUp = document.querySelector('.pop-up');
     popUp.addEventListener('click', (event) => {
         if (event.target.classList.contains('pop-up')) {
-            popUp.classList.toggle('invisible-element');
+            togglePopUp(popUp);
         }
     });
 });
 
-function closePopUp() {
-    const popUp = document.querySelector('.pop-up');
-    popUp.classList.toggle('invisible-element');
+function togglePopUp(element = undefined) {
+    const popUp = element ?? document.querySelector('.pop-up');
+    popUp.classList.toggle('active');
+    document.body.classList.toggle('popup-is-open');
 }
 
 function clickSlider(slider) {
@@ -31,7 +36,6 @@ function clickSlider(slider) {
     slider.style.background = `linear-gradient(to right, var(--dark-red) 0%, var(--dark-red) ${value}%, var(--slider-grey) ${value}%, var(--slider-grey) 100%)`;
 }
 
-let isAdaptiveMenuOpen = false;
 function toggleAdaptiveMenu() {
     isAdaptiveMenuOpen = !isAdaptiveMenuOpen;
 
@@ -43,9 +47,4 @@ function toggleAdaptiveMenu() {
 
     const navigation = document.querySelector('.header-navigation');
     navigation.classList.toggle('header-navigation-active');
-}
-
-function clickBuyTicket() {
-    const popUp = document.querySelector('.pop-up');
-    popUp.classList.toggle('invisible-element');
 }

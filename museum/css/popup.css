@@ -1,14 +1,24 @@
+.popup-is-open {
+    overflow: hidden;
+}
+
 .pop-up {
     width: 100%;
     height: 100%;
     background-color: var(--popup-background);
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 30;
+    visibility: hidden;
+    transition: visibility 1s;
+}
+
+.pop-up.active {
+    visibility: visible;
 }
 
 .pop-up-content {
@@ -20,6 +30,16 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    transform: translateX(-140%);
+    transition: transform 1s;
+}
+
+.pop-up.active .pop-up-content {
+    transform: translateX(0);
+}
+
+.pop-up:not(.active) .pop-up-content {
+    transform: translateX(-140%);
 }
 
 .pop-up-close-button {
@@ -99,7 +119,49 @@
     padding: 0 15px;
 }
 
-.booking-item.ticket-type {
+.booking-selector-container {
+    position: relative;
+}
+
+.booking-span {
+    width: 100%;
+    border: 1px solid var(--background-black);
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    z-index: 40;
+    background-color: var(--background-white);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    top: 100%;
+    left: 0;
+    margin-top: -1px;
+}
+
+.booking-span.limited-span {
+    max-height: 350px;
+    overflow-y: scroll;
+}
+
+.booking-span.active {
+    display: flex;
+}
+
+.span-text {
+    height: 45px;
+    min-height: 45px;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    padding-left: 43px;
+}
+
+.span-text:hover {
+    background-color: #E7E7E7;
+}
+
+.booking-item.booking-ticket-type {
     height: 135px;
     flex-direction: column;
     align-items: start;
