@@ -4,7 +4,7 @@ let videoElementsList = [];
 let videoContainer, dotsList;
 
 let isVideoSwipeEnabled = true;
-let currentVideoStep = 0;
+let currentVideoStep = 1;
 
 let videoWidth = 0;
 let needUpdateWidth = true;
@@ -14,7 +14,7 @@ function getVideoCarouselElements() {
     dotsList = document.querySelectorAll('.video-dot');
 }
 
-function prepareVideoList() {
+function prepareVideoElementsList() {
     const dotsIndexList = Array.from({ length: dotsList.length }, ( _, i) => i);
     videoElementsList = [
         dotsIndexList[dotsIndexList.length - 1],
@@ -43,7 +43,7 @@ function prepareVideoElements() {
 }
 
 function prepareItemsCollection() {
-    prepareVideoList();
+    prepareVideoElementsList();
     prepareVideoElements();
 }
 
@@ -53,61 +53,61 @@ function getVideoWidth() {
     needUpdateWidth = false;
 }
 
-let getDotIndexFromStepIndex = () => (currentVideoStep < 0) ? (dotsList.length + currentVideoStep) : currentVideoStep;
-
-let getNewVideoLeftOffset = () => -1 * (currentVideoStep + 1) * videoWidth + 'px';
+let getNewVideoLeftOffset = () => -1 * currentVideoStep * videoWidth + 'px';
 
 function moveCarouselVideo() {
     if (needUpdateWidth) getVideoWidth();
     videoContainer.style.left = getNewVideoLeftOffset();
+}
 
-    const dotIndex = getDotIndexFromStepIndex();
-    setActiveVideoDot(dotIndex);
-
+function afterMoveCarouselVideo() {
+    setActiveVideoDot();
     showNewMainVideo();
 }
 
 function flipCarouselOnEdges() {
-    if (currentVideoStep === -2) {
+    if (currentVideoStep === -1) {
         videoContainer.classList.remove("carousel-with-animation");
-        currentVideoStep = dotsList.length - 2;
+        currentVideoStep = dotsList.length - 1;
         videoContainer.style.left = getNewVideoLeftOffset(currentVideoStep);
         setTimeout(() => videoContainer.classList.add("carousel-with-animation"), 1);
     }
-    else if (currentVideoStep === dotsList.length - 1) {
+    else if (currentVideoStep === dotsList.length) {
         videoContainer.classList.remove("carousel-with-animation");
-        currentVideoStep = -1;
+        currentVideoStep = 0;
         videoContainer.style.left = getNewVideoLeftOffset(currentVideoStep);
         setTimeout(() => videoContainer.classList.add("carousel-with-animation"), 1);
     }
+    afterMoveCarouselVideo();
 }
 
 function moveVideoToLeft() {
     hideOldMainVideo();
-    currentVideoStep--;
+    --currentVideoStep;
     moveCarouselVideo();
 }
 
 function moveVideoToRight() {
     hideOldMainVideo();
-    currentVideoStep++;
+    ++currentVideoStep;
     moveCarouselVideo();
 }
 
-function setActiveVideoDot(dotIndex) {
+function setActiveVideoDot() {
     for (let dot of dotsList) {
         dot.classList.remove('video-active');
     }
+    const dotIndex = videoElementsList[currentVideoStep];
     dotsList[dotIndex].classList.add('video-active');
 }
 
 function hideOldMainVideo() {
     stopPlayAnyVideo();
-    document.getElementById('youtube-main-player').classList.remove('player-video-' + getDotIndexFromStepIndex());
+    document.getElementById('youtube-main-player').classList.remove('player-video-' + videoElementsList[currentVideoStep]);
 }
 
 function showNewMainVideo() {
-    document.getElementById('youtube-main-player').classList.add('player-video-' + getDotIndexFromStepIndex());
+    document.getElementById('youtube-main-player').classList.add('player-video-' + videoElementsList[currentVideoStep]);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
         item.addEventListener('click', () => {
             if (isVideoSwipeEnabled) {
                 hideOldMainVideo();
-                currentVideoStep = index;
+                currentVideoStep = index + 1;
                 moveCarouselVideo();
             }
         });
