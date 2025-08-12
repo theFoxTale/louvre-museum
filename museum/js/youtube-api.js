@@ -2,8 +2,11 @@ let miniYouTubePlayer;
 let mainYouTubePlayer;
 let updateInterval;
 
-let volumeSlider;
+let volumeSlider, bigPlayButton;
 let volumeSliderPrevValue = "30";
+
+let videoPlaybackRate = 1;
+let videoAvailableRates = [];
 
 const videoLinksList = [
     'zp1BXPX8jcU',
@@ -38,6 +41,7 @@ function miniPlayerClick(playerID, playerIndex) {
             'playsinline': 1,   //встроенное воспроизведение для мобильных браузеров и для WebViews
             'enablejsapi': 1,   //управление проигрывателем через вызовы API IFrame Player
             'rel': 0,           //похожие видео будут взяты с того же канала
+            'disablekb': 1,
         },
         events: {
             'onReady': onPlayerReady,
@@ -46,8 +50,17 @@ function miniPlayerClick(playerID, playerIndex) {
 }
 
 function onPlayerReady(event) {
-
     event.target.playVideo();
+}
+
+function onMainPlayerReady(event) {
+    startMainVideo();
+    videoAvailableRates = event.target.getAvailablePlaybackRates();
+}
+
+function startMainVideo() {
+    mainYouTubePlayer.playVideo();
+    playButtonWork();
 }
 
 function stopPlayAnyVideo() {
@@ -74,13 +87,26 @@ function attachMainVideo() {
             'enablejsapi': 1,
             'rel': 0,
             'iv_load_policy': 3,    //отключение видео-аннотаций по умолчанию
-            'loop': 0,
+            'disablekb': 1,         // управление с клавиатуры включено
         },
         events: {
-            'onReady': onPlayerReady,
+            'onReady': onMainPlayerReady,
             'onStateChange': onPlayerStateChange
         }
     });
+}
+
+function resetTwoButtons(className, hiddenButtonIndex) {
+    const icons = document.querySelectorAll('.' + className + ' > svg');
+    icons.forEach(icon => icon.classList.remove('hidden-element'));
+    icons[hiddenButtonIndex].classList.add('hidden-element');
+}
+
+function resetVideoButtons() {
+    resetTwoButtons('play-button', 1);
+    if (bigPlayButton.classList.contains('hidden-element')) {
+        bigPlayButton.classList.remove('hidden-element');
+    }
 }
 
 function onPlayerStateChange(event) {
@@ -98,7 +124,7 @@ function onPlayerStateChange(event) {
     // Видео закончилось
     if (event.data === YT.PlayerState.ENDED) {
         stopSliderUpdateTimer();
-        playButtonWork();
+        resetVideoButtons();
         resetPlaySliders();
     }
 }
@@ -109,17 +135,15 @@ function switchVideoPlayerIcon(iconName) {
 
 function playButtonWork() {
     switchVideoPlayerIcon('play-button');
-    document.querySelector('.big-play-button').classList.toggle('hidden-element');
+    bigPlayButton.classList.toggle('hidden-element');
 }
 
 function clickPlayButton() {
-    playButtonWork();
-
     if (!mainYouTubePlayer) {
         attachMainVideo();
     }
     else {
-        (mainYouTubePlayer.getPlayerState() === YT.PlayerState.PLAYING) ? mainYouTubePlayer.pauseVideo() : mainYouTubePlayer.playVideo();
+        (mainYouTubePlayer.getPlayerState() === YT.PlayerState.PLAYING) ? mainYouTubePlayer.pauseVideo() : startMainVideo();
     }
 }
 
@@ -176,8 +200,18 @@ function stopSliderUpdateTimer() {
     clearInterval(updateInterval);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function scrollWindowToVideo() {
+    const videoContainer = document.querySelector('.video-and-controls-container');
+    videoContainer.scrollIntoView({ behavior: 'smooth' });
+}
+
+function getVideoElements() {
+    bigPlayButton = document.querySelector('.big-play-button');
     volumeSlider = document.querySelector('.slider-for-volume');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    getVideoElements();
 
     document.querySelectorAll('.play-button, .big-play-button').forEach(item => item.addEventListener('click', clickPlayButton));
     document.querySelector('.volume-button').addEventListener('click', clickVolumeButton);
@@ -187,6 +221,10 @@ document.addEventListener('DOMContentLoaded', () => {
         slider.addEventListener('input', function() {
             setSliderPosition(this);
             if (mainYouTubePlayer) {
+                if (mainYouTubePlayer.getPlayerState() === YT.PlayerState.ENDED) {
+                    playButtonWork();
+                }
+
                 const newVideoLength =  mainYouTubePlayer.getDuration() * this.value / 100;
                 mainYouTubePlayer.seekTo(newVideoLength);
             }
@@ -194,15 +232,48 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.querySelector('.slider-for-volume').addEventListener('input', function() {
-        const icons = document.querySelectorAll('.volume-button > svg');
-        icons.forEach(icon => icon.classList.remove('hidden-element'));
-
         const notActiveIconIndex = (this.value === "0") ? 0 : 1;
-        icons[notActiveIconIndex].classList.add('hidden-element');
+        resetTwoButtons('volume-button', notActiveIconIndex);
 
         setSliderPosition(this);
+
         if (mainYouTubePlayer) {
             mainYouTubePlayer.setVolume(this.value);
+        }
+    });
+
+    document.addEventListener('keydown', function(event) {
+        switch (event.code) {
+            case 'Space':
+                event.preventDefault();
+                scrollWindowToVideo();
+                clickPlayButton();
+                break;
+            case 'KeyM':
+                clickVolumeButton();
+                break;
+            case 'KeyF':
+                scrollWindowToVideo();
+                clickExpandButton();
+                break;
+            case 'Equal':
+                if (event.shiftKey && mainYouTubePlayer) {
+                    const idx = videoAvailableRates.indexOf(videoPlaybackRate);
+                    if (idx < videoAvailableRates.length - 1) {
+                        videoPlaybackRate = videoAvailableRates[idx + 1];
+                        mainYouTubePlayer.setPlaybackRate(videoPlaybackRate);
+                    }
+                }
+                break;
+            case 'Minus':
+                if (event.shiftKey && mainYouTubePlayer) {
+                    const idx = videoAvailableRates.indexOf(videoPlaybackRate);
+                    if (idx > 0) {
+                        videoPlaybackRate = videoAvailableRates[idx - 1];
+                        mainYouTubePlayer.setPlaybackRate(videoPlaybackRate);
+                    }
+                }
+                break;
         }
     });
 
