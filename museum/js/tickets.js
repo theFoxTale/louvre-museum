@@ -1,6 +1,8 @@
 let ticketTypeInBookingSection = 0;
 const ticketStandardCost = [20, 25, 40];
 
+let cardMonth, cardYear;
+
 function selectTicketType() {
     setSumTickerPrice();
 }
@@ -24,25 +26,6 @@ function setSumTickerPrice() {
     const sumText = document.querySelector('.sum-ticket-price');
     sumText.textContent = '' + sumPrice;
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    setSumTickerPrice();
-
-    document.querySelectorAll('.ticket-type-span-text').forEach((item, index) => {
-        item.onclick = function() {
-            selectSomethingAndHideParent(item);
-            updateTicketType(index);
-        };
-    });
-
-    document.querySelectorAll('.time-span-text').forEach((item) => {
-        item.onclick = function() {
-            selectSomethingAndHideParent(item);
-            updateTicketTime(item);
-        };
-    });
-});
-
 
 /* --- Pop Up --- */
 function toggleBookingTicketSelector(element) {
@@ -152,3 +135,65 @@ function increaseOverviewCount(element, ticketType) {
     updateRightCount(ticketType);
     setOverviewTicketSum()
 }
+
+function getTicketElements() {
+    cardMonth = document.getElementById('card-month');
+    cardYear = document.getElementById('card-year');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    getTicketElements();
+    setSumTickerPrice();
+
+    document.querySelectorAll('.ticket-type-span-text').forEach((item, index) => {
+        item.addEventListener('click', function() {
+            selectSomethingAndHideParent(item);
+            updateTicketType(index);
+        });
+    });
+
+    document.querySelectorAll('.time-span-text').forEach((item) => {
+        item.addEventListener('click', function() {
+            selectSomethingAndHideParent(item);
+            updateTicketTime(item);
+        });
+    });
+
+    document.querySelectorAll('.for-toggle-booking').forEach(item => {
+        item.addEventListener('click', function() {
+            toggleBookingTicketSelector(item);
+        });
+    });
+
+    document.querySelector('.pop-up-close-button').addEventListener('click', function() {
+        togglePopUp();
+    });
+
+    document.querySelectorAll('.amount-down').forEach(item => {
+        item.addEventListener('click', function() {
+            decreaseOverviewCount(item, 'basic');
+        });
+    });
+
+    document.querySelectorAll('.amount-up').forEach(item => {
+        item.addEventListener('click', function() {
+            increaseOverviewCount(item, 'basic');
+        });
+    });
+
+    document.querySelector('.up-card-month').addEventListener('click', function() {
+        cardMonth.stepUp();
+    });
+
+    document.querySelector('.down-card-month').addEventListener('click', function() {
+        cardMonth.stepDown();
+    });
+
+    document.querySelector('.up-card-year').addEventListener('click', function() {
+        cardYear.stepUp();
+    });
+
+    document.querySelector('.down-card-year').addEventListener('click', function() {
+        cardYear.stepDown();
+    });
+});

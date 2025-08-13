@@ -228,11 +228,21 @@
     height: 2px;
 }
 
+.ticket-data {
+    flex-grow: 1;
+    border: 1px solid transparent;
+    cursor: text;
+}
+
 .ticket-data-span {
     flex-grow: 1;
 }
 
-.ticket-name-span {
+.ticket-datetime {
+    width: 40px;
+}
+
+.ticket-name-text {
     font-family: Roboto, sans-serif;
     font-weight: 400;
     font-size: 18px;
