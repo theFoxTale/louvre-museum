@@ -5,6 +5,7 @@
 /* Настройки для элементов по умолчанию */
 html {
     scroll-behavior: smooth;
+    scrollbar-gutter: stable;
 }
 
 body {
@@ -14,6 +15,7 @@ body {
     flex-direction: column;
     font-family: Roboto, sans-serif;
     background-color: var(--background-black);
+    scrollbar-gutter: stable;
 }
 
 p {
